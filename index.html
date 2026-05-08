@@ -52,7 +52,6 @@
             transition: padding-bottom var(--transition);
         }
 
-        /* 顶部导航栏 */
         .navbar {
             position: sticky;
             top: 0;
@@ -68,7 +67,6 @@
             justify-content: space-between;
             gap: 12px;
             box-shadow: var(--shadow-sm);
-            transition: background var(--transition), box-shadow var(--transition);
         }
         .navbar-brand {
             display: flex;
@@ -78,18 +76,22 @@
             font-size: 1rem;
             color: var(--text);
             white-space: nowrap;
-            letter-spacing: -0.01em;
+        }
+        .day-badge {
+            background: var(--accent);
+            color: #fff;
+            font-size: 0.78rem;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 20px;
+            white-space: nowrap;
         }
         .navbar-title {
             font-size: 0.9rem;
             color: var(--text-secondary);
             font-weight: 500;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
         }
 
-        /* 课程切换标签 */
         .course-tabs {
             display: flex;
             gap: 4px;
@@ -115,7 +117,6 @@
             white-space: nowrap;
             font-family: var(--font);
             -webkit-tap-highlight-color: transparent;
-            letter-spacing: -0.01em;
         }
         .course-tab-btn:hover {
             color: var(--text);
@@ -128,7 +129,6 @@
             box-shadow: var(--shadow-sm);
         }
 
-        /* 主容器 */
         .main-container {
             max-width: 720px;
             margin: 0 auto;
@@ -138,7 +138,6 @@
             gap: 20px;
         }
 
-        /* 每个课程内容块 */
         .course-content {
             display: none;
         }
@@ -148,17 +147,12 @@
             gap: 20px;
         }
 
-        /* 播放器卡片 */
         .player-card {
             background: var(--bg-card);
             border-radius: var(--radius-lg);
             padding: 20px 20px 18px;
             box-shadow: var(--shadow-md);
             border: 1px solid rgba(74, 55, 40, 0.06);
-            transition: box-shadow var(--transition), transform var(--transition);
-        }
-        .player-card:hover {
-            box-shadow: var(--shadow-lg);
         }
         .player-card .audio-title {
             font-weight: 600;
@@ -196,12 +190,7 @@
         }
         .btn-play:hover {
             background: var(--accent-hover);
-            box-shadow: 0 4px 14px rgba(192, 133, 58, 0.4);
             transform: scale(1.04);
-        }
-        .btn-play:active {
-            transform: scale(0.95);
-            transition: 0.1s;
         }
         .btn-play svg {
             width: 22px;
@@ -223,9 +212,7 @@
             background: var(--progress-bg);
             border-radius: 10px;
             cursor: pointer;
-            position: relative;
             overflow: visible;
-            -webkit-tap-highlight-color: transparent;
             transition: height 0.15s;
         }
         .progress-bar-track:hover {
@@ -236,26 +223,7 @@
             background: var(--progress-fill);
             border-radius: 10px;
             transition: width 0.08s linear;
-            position: relative;
-            min-width: 0;
             pointer-events: none;
-        }
-        .progress-bar-fill::after {
-            content: '';
-            position: absolute;
-            right: -6px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 14px;
-            height: 14px;
-            background: var(--accent);
-            border-radius: 50%;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-            opacity: 0;
-            transition: opacity 0.2s;
-        }
-        .progress-bar-track:hover .progress-bar-fill::after {
-            opacity: 1;
         }
         .time-display {
             display: flex;
@@ -263,15 +231,13 @@
             font-size: 0.75rem;
             color: var(--text-muted);
             font-variant-numeric: tabular-nums;
-            font-family: 'SF Mono', 'Cascadia Code', 'Consolas', monospace;
-            letter-spacing: 0.02em;
+            font-family: 'SF Mono', monospace;
         }
 
         .volume-control {
             display: flex;
             align-items: center;
             gap: 6px;
-            flex-shrink: 0;
         }
         .volume-icon {
             background: none;
@@ -280,24 +246,15 @@
             font-size: 1.2rem;
             color: var(--text-secondary);
             padding: 4px;
-            border-radius: 6px;
-            transition: color var(--transition);
-            -webkit-tap-highlight-color: transparent;
-            line-height: 1;
-        }
-        .volume-icon:hover {
-            color: var(--accent);
         }
         .volume-slider {
             width: 70px;
             height: 5px;
             -webkit-appearance: none;
-            appearance: none;
             background: var(--progress-bg);
             border-radius: 10px;
             outline: none;
             cursor: pointer;
-            transition: background 0.2s;
         }
         .volume-slider::-webkit-slider-thumb {
             -webkit-appearance: none;
@@ -305,18 +262,8 @@
             height: 16px;
             border-radius: 50%;
             background: var(--accent);
-            cursor: pointer;
             border: 2px solid #fff;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-        }
-        .volume-slider::-moz-range-thumb {
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            background: var(--accent);
-            cursor: pointer;
-            border: 2px solid #fff;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.2);
         }
         .speed-btn {
             background: none;
@@ -328,18 +275,13 @@
             color: var(--text-secondary);
             font-weight: 600;
             transition: all var(--transition);
-            white-space: nowrap;
-            flex-shrink: 0;
-            -webkit-tap-highlight-color: transparent;
             font-family: var(--font);
         }
         .speed-btn:hover {
             border-color: var(--accent);
             color: var(--accent);
-            background: rgba(192, 133, 58, 0.05);
         }
 
-        /* 内容版本标签 */
         .tabs-container {
             display: flex;
             gap: 4px;
@@ -347,7 +289,6 @@
             border-radius: var(--radius);
             padding: 4px;
             box-shadow: var(--shadow-sm);
-            border: 1px solid rgba(74, 55, 40, 0.05);
         }
         .tab-btn {
             flex: 1;
@@ -360,14 +301,7 @@
             font-weight: 500;
             color: var(--text-secondary);
             transition: all var(--transition);
-            white-space: nowrap;
             font-family: var(--font);
-            -webkit-tap-highlight-color: transparent;
-            letter-spacing: -0.01em;
-        }
-        .tab-btn:hover {
-            color: var(--text);
-            background: rgba(192, 133, 58, 0.06);
         }
         .tab-btn.active {
             background: #fff;
@@ -376,7 +310,6 @@
             box-shadow: var(--shadow-sm);
         }
 
-        /* 歌词/句子区 */
         .lyrics-container {
             background: var(--bg-card);
             border-radius: var(--radius-lg);
@@ -386,19 +319,7 @@
             max-height: 520px;
             overflow-y: auto;
             scroll-behavior: smooth;
-            padding-bottom: 24px;
         }
-        .lyrics-container::-webkit-scrollbar {
-            width: 5px;
-        }
-        .lyrics-container::-webkit-scrollbar-track {
-            background: transparent;
-        }
-        .lyrics-container::-webkit-scrollbar-thumb {
-            background: #d5c9b5;
-            border-radius: 10px;
-        }
-
         .lyric-line {
             display: flex;
             align-items: flex-start;
@@ -410,11 +331,12 @@
             transition: all var(--transition);
             border-left: 3px solid transparent;
             scroll-margin-top: 60px;
-            scroll-margin-bottom: 40px;
-            -webkit-tap-highlight-color: transparent;
         }
-        .lyric-line:hover {
-            background: rgba(192, 133, 58, 0.06);
+        .lyric-line.active {
+            background: var(--highlight);
+            border-left-color: var(--highlight-border);
+            box-shadow: inset 0 0 0 1px rgba(232, 168, 64, 0.25);
+            transform: translateX(2px);
         }
         .lyric-line .line-index {
             flex-shrink: 0;
@@ -428,66 +350,10 @@
             font-size: 0.7rem;
             font-weight: 600;
             color: var(--text-muted);
-            transition: all var(--transition);
-            font-variant-numeric: tabular-nums;
         }
-        .lyric-line .line-content {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 2px;
-            min-width: 0;
-        }
-        .lyric-line .line-es {
-            font-size: 0.95rem;
-            color: var(--text);
-            font-weight: 500;
-            letter-spacing: -0.01em;
-            line-height: 1.5;
-        }
-        .lyric-line .line-en {
-            font-size: 0.82rem;
-            color: var(--text-muted);
-            font-style: italic;
-            line-height: 1.45;
-        }
-        .lyric-line .line-en-only {
-            font-size: 0.95rem;
-            color: var(--text);
-            font-weight: 500;
-            letter-spacing: -0.01em;
-            line-height: 1.5;
-        }
-        .lyric-line.active {
-            background: var(--highlight);
-            border-left-color: var(--highlight-border);
-            box-shadow: inset 0 0 0 1px rgba(232, 168, 64, 0.25);
-            transform: translateX(2px);
-        }
-        .lyric-line.active .line-index {
-            background: var(--highlight-active);
-            color: var(--text);
-            font-weight: 700;
-            box-shadow: 0 2px 6px rgba(192, 133, 58, 0.3);
-            transform: scale(1.08);
-        }
-        .lyric-line.active .line-es,
-        .lyric-line.active .line-en-only {
-            font-weight: 600;
-            color: #3d2a18;
-        }
-        .lyric-line.active .line-en {
-            color: #6b5540;
-        }
-        .lyric-line.played {
-            opacity: 0.7;
-        }
-        .lyric-line.played .line-index {
-            background: #d5c9b5;
-            color: #8a7a65;
-        }
+        .line-es, .line-en-only { font-size: 0.95rem; color: var(--text); font-weight: 500; }
+        .line-en { font-size: 0.82rem; color: var(--text-muted); font-style: italic; }
 
-        /* 浮动迷你播放器 */
         .float-player {
             position: fixed;
             bottom: 0;
@@ -497,19 +363,15 @@
             height: var(--float-player-height);
             background: rgba(247, 241, 230, 0.94);
             backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
             border-top: 1px solid rgba(74, 55, 40, 0.12);
             box-shadow: 0 -4px 20px rgba(74, 55, 40, 0.13);
             display: flex;
             align-items: center;
             padding: 0 12px 0 16px;
             gap: 10px;
-            transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
             border-radius: 16px 16px 0 0;
-            transform: translateY(0); /* 始终显示 */
         }
-        .float-player .fp-btn-play {
-            flex-shrink: 0;
+        .fp-btn-play {
             width: 38px;
             height: 38px;
             border-radius: 50%;
@@ -520,18 +382,12 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: all var(--transition);
-            -webkit-tap-highlight-color: transparent;
-            box-shadow: 0 2px 6px rgba(192, 133, 58, 0.3);
         }
-        .float-player .fp-info {
+        .fp-info {
             flex: 1;
             min-width: 0;
-            display: flex;
-            flex-direction: column;
-            gap: 2px;
         }
-        .float-player .fp-current-text {
+        .fp-current-text {
             font-size: 0.8rem;
             font-weight: 600;
             color: var(--text);
@@ -539,101 +395,37 @@
             overflow: hidden;
             text-overflow: ellipsis;
         }
-        .float-player .fp-time {
+        .fp-time {
             font-size: 0.68rem;
             color: var(--text-muted);
-            font-variant-numeric: tabular-nums;
         }
-        .float-player .fp-progress-track {
+        .fp-progress-track {
             flex: 1;
             max-width: 120px;
             height: 5px;
             background: var(--progress-bg);
             border-radius: 10px;
             cursor: pointer;
-            position: relative;
         }
-        .float-player .fp-progress-fill {
+        .fp-progress-fill {
             height: 100%;
             background: var(--progress-fill);
             border-radius: 10px;
-            transition: width 0.08s linear;
-            pointer-events: none;
         }
-        .float-player .fp-volume-icon {
+        .fp-volume-icon {
             background: none;
             border: none;
             cursor: pointer;
             font-size: 1rem;
             color: var(--text-secondary);
-            padding: 4px;
         }
 
         @media (max-width: 600px) {
-            .main-container {
-                padding: 12px 8px 24px;
-                gap: 14px;
-            }
-            .player-card {
-                padding: 14px 12px 14px;
-                border-radius: var(--radius);
-            }
-            .player-controls-row {
-                gap: 8px;
-            }
-            .btn-play {
-                width: 42px;
-                height: 42px;
-            }
-            .btn-play svg {
-                width: 18px;
-                height: 18px;
-            }
-            .volume-slider {
-                width: 50px;
-            }
-            .speed-btn {
-                font-size: 0.7rem;
-                padding: 4px 8px;
-            }
-            .lyrics-container {
-                max-height: 380px;
-                padding: 10px 4px 10px 10px;
-            }
-            .lyric-line {
-                padding: 8px 10px;
-                gap: 8px;
-                margin: 1px 2px;
-            }
-            .lyric-line .line-index {
-                width: 22px;
-                height: 22px;
-                font-size: 0.65rem;
-            }
-            .course-tab-btn {
-                font-size: 0.75rem;
-                padding: 8px 10px;
-            }
-            .navbar {
-                padding: 0 12px;
-                height: 46px;
-            }
-            .float-player {
-                height: 50px;
-                --float-player-height: 50px;
-            }
-            .float-player .fp-btn-play {
-                width: 32px;
-                height: 32px;
-            }
-            body {
-                padding-bottom: calc(50px + 16px);
-            }
+            .course-tab-btn { font-size: 0.75rem; padding: 8px 10px; }
         }
     </style>
 </head>
 <body>
-
     <nav class="navbar">
         <div class="navbar-brand">
             <span>📖</span> <span id="current-course-badge" class="day-badge">L1U1D1</span>
@@ -643,7 +435,6 @@
     </nav>
 
     <div class="main-container">
-        <!-- 课程切换标签 -->
         <div class="course-tabs" id="courseTabs">
             <button class="course-tab-btn active" data-course="d1">L1U1D1</button>
             <button class="course-tab-btn" data-course="d2">L1U1D2</button>
@@ -655,29 +446,18 @@
             <button class="course-tab-btn" data-course="num">🔢 Números</button>
         </div>
 
-        <!-- 课程内容容器：每个课程一个div -->
-        <div id="course-d1" class="course-content active">
-            <!-- 内容由JS动态生成 -->
-        </div>
-        <div id="course-d2" class="course-content">
-        </div>
-        <div id="course-d3" class="course-content">
-        </div>
-        <div id="course-d4" class="course-content">
-        </div>
-        <div id="course-d5" class="course-content">
-        </div>
-        <div id="course-d6" class="course-content">
-        </div>
-        <div id="course-d7" class="course-content">
-        </div>
-        <div id="course-num" class="course-content">
-        </div>
+        <div id="course-d1" class="course-content active"></div>
+        <div id="course-d2" class="course-content"></div>
+        <div id="course-d3" class="course-content"></div>
+        <div id="course-d4" class="course-content"></div>
+        <div id="course-d5" class="course-content"></div>
+        <div id="course-d6" class="course-content"></div>
+        <div id="course-d7" class="course-content"></div>
+        <div id="course-num" class="course-content"></div>
     </div>
 
-    <!-- 共享浮动迷你播放器 -->
     <div class="float-player" id="floatPlayer">
-        <button class="fp-btn-play" id="fpBtnPlay" aria-label="播放">
+        <button class="fp-btn-play" id="fpBtnPlay">
             <svg id="fpIconPlay" viewBox="0 0 24 24" width="16" height="16"><path d="M8 5v14l11-7z"/></svg>
             <svg id="fpIconPause" viewBox="0 0 24 24" width="16" height="16" style="display:none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
         </button>
@@ -693,12 +473,9 @@
 
     <script>
         (function() {
-            // ---------- 全局状态 ----------
+            // ----- 全局状态 -----
             let currentCourseId = 'd1';
-            // 每个课程实例的引用
             const courses = {};
-
-            // 共享浮动播放器 DOM
             const fpBtnPlay = document.getElementById('fpBtnPlay');
             const fpIconPlay = document.getElementById('fpIconPlay');
             const fpIconPause = document.getElementById('fpIconPause');
@@ -707,12 +484,9 @@
             const fpProgressTrack = document.getElementById('fpProgressTrack');
             const fpProgressFill = document.getElementById('fpProgressFill');
             const fpBtnVolume = document.getElementById('fpBtnVolume');
-
-            // 当前活动的音频实例 (由切换课程决定)
             let activeAudio = null;
             let activeCourseInstance = null;
 
-            // 课程标签数据
             const courseConfigs = [
                 { id: 'd1', label: 'L1U1D1', title: 'Diálogo 1', audioSrc: 'L1U1D1.mp3', type: 'dialog' },
                 { id: 'd2', label: 'L1U1D2', title: 'Diálogo 2', audioSrc: 'L1U1D2.mp3', type: 'dialog' },
@@ -724,105 +498,39 @@
                 { id: 'num', label: 'Números', title: 'Números', audioSrc: 'L1U1números.mp3', type: 'numeros' }
             ];
 
-            // 切换到指定课程
             function switchCourse(courseId) {
                 if (currentCourseId === courseId) return;
-
-                // 暂停之前的音频
-                if (activeAudio) {
-                    activeAudio.pause();
-                }
-                if (activeCourseInstance && activeCourseInstance.setIsPlaying) {
-                    activeCourseInstance.setIsPlaying(false);
-                }
-
-                // 隐藏所有课程内容
+                if (activeAudio) activeAudio.pause();
                 document.querySelectorAll('.course-content').forEach(el => el.classList.remove('active'));
-                // 显示目标课程
-                const targetContent = document.getElementById(`course-${courseId}`);
-                if (targetContent) {
-                    targetContent.classList.add('active');
-                }
-
-                // 更新导航栏
+                document.getElementById(`course-${courseId}`).classList.add('active');
                 const config = courseConfigs.find(c => c.id === courseId);
-                if (config) {
-                    document.getElementById('current-course-badge').textContent = config.label;
-                    document.getElementById('current-course-title').textContent = config.title;
-                }
-
-                // 更新标签激活状态
-                document.querySelectorAll('.course-tab-btn').forEach(btn => {
-                    btn.classList.remove('active');
-                    if (btn.dataset.course === courseId) btn.classList.add('active');
-                });
-
-                // 设置活动课程实例
+                document.getElementById('current-course-badge').textContent = config.label;
+                document.getElementById('current-course-title').textContent = config.title;
+                document.querySelectorAll('.course-tab-btn').forEach(btn => btn.classList.remove('active'));
+                document.querySelector(`.course-tab-btn[data-course="${courseId}"]`).classList.add('active');
                 if (courses[courseId]) {
                     activeCourseInstance = courses[courseId];
                     activeAudio = activeCourseInstance.audio;
-                    // 重新绑定浮动播放器事件到当前音频
                     bindFloatPlayerToAudio(activeAudio, activeCourseInstance);
-                    // 更新浮动播放器显示
-                    if (activeCourseInstance.updateFloatDisplay) {
-                        activeCourseInstance.updateFloatDisplay();
-                    }
+                    if (activeCourseInstance.updateFloatDisplay) activeCourseInstance.updateFloatDisplay();
                 }
-
                 currentCourseId = courseId;
             }
 
-            // 绑定浮动播放器的事件到指定音频和课程实例
             function bindFloatPlayerToAudio(audio, instance) {
-                // 移除之前绑定的事件 (通过克隆节点移除监听器)
-                const newFpBtnPlay = fpBtnPlay.cloneNode(true);
-                fpBtnPlay.parentNode.replaceChild(newFpBtnPlay, fpBtnPlay);
-                // 重新引用
-                window.fpBtnPlay = newFpBtnPlay;
-                // 绑定播放暂停
-                newFpBtnPlay.addEventListener('click', () => {
-                    if (instance) instance.togglePlay();
-                });
-
-                // 进度条事件
+                const newFpBtn = fpBtnPlay.cloneNode(true);
+                fpBtnPlay.parentNode.replaceChild(newFpBtn, fpBtnPlay);
+                newFpBtn.addEventListener('click', () => instance.togglePlay());
                 const newFpTrack = fpProgressTrack.cloneNode(true);
                 fpProgressTrack.parentNode.replaceChild(newFpTrack, fpProgressTrack);
-                window.fpProgressTrack = newFpTrack;
-                // 进度条交互使用全局函数
-                // 这些交互将在每个课程实例中通过全局监听处理，为简化，保留课程内部的进度处理
-                // 我们将课程实例提供的进度条更新方法绑定
-                if (instance) {
-                    instance.bindFloatProgress(newFpTrack);
-                }
+                if (instance.bindFloatProgress) instance.bindFloatProgress(newFpTrack);
             }
 
-            // 全局音量控制（与当前音频同步）
             fpBtnVolume.addEventListener('click', () => {
-                if (activeCourseInstance) {
-                    activeCourseInstance.toggleMute();
-                }
+                if (activeCourseInstance && activeCourseInstance.toggleMute) activeCourseInstance.toggleMute();
             });
 
-            // 初始化所有课程
-            function initAllCourses() {
-                courseConfigs.forEach(config => {
-                    const container = document.getElementById(`course-${config.id}`);
-                    if (!container) return;
-                    const courseInstance = config.type === 'numeros' 
-                        ? new NumerosCourse(container, config) 
-                        : new DialogCourse(container, config);
-                    courses[config.id] = courseInstance;
-                });
-
-                // 默认激活第一个课程
-                if (courses['d1']) {
-                    activeCourseInstance = courses['d1'];
-                    activeAudio = activeCourseInstance.audio;
-                    bindFloatPlayerToAudio(activeAudio, activeCourseInstance);
-                }
-            }
-
-            // 对话框课程类
+            // ----- 对话框课程类 -----
             class DialogCourse {
                 constructor(container, config) {
                     this.container = container;
@@ -836,81 +544,54 @@
                     this.timestamps = [];
                     this.currentActiveIndex = -1;
                     this.currentTab = 'part1';
-                    // 数据
+                    this.dragging = false;
                     this.part1Lines = [];
                     this.part2Lines = [];
                     this.part3Lines = [];
                     this.totalLines = 0;
-                    // UI元素
-                    this.btnPlayMain = null;
-                    this.iconPlay = null;
-                    this.iconPause = null;
-                    this.progressFillMain = null;
-                    this.timeCurrent = null;
-                    this.timeDuration = null;
-                    this.volumeSlider = null;
-                    this.btnVolume = null;
-                    this.btnSpeed = null;
-                    this.lyricsContent = null;
-                    this.lyricsContainer = null;
-                    this.tabBtns = null;
-                    this.playerCard = null;
-
                     this.init();
                 }
 
                 init() {
-                    // 设置数据
                     this.setupData();
-                    // 构建HTML
                     this.buildHTML();
-                    // 绑定事件
                     this.bindEvents();
-                    // 初始渲染
-                    this.audio.addEventListener('loadedmetadata', () => {
-                        this.calculateTimestamps();
-                        this.updateDurationDisplay();
-                    });
-                    if (this.audio.readyState >= 1 && this.audio.duration && isFinite(this.audio.duration)) {
-                        this.calculateTimestamps();
-                        this.updateDurationDisplay();
-                    }
+                    this.audio.addEventListener('loadedmetadata', () => { this.calculateTimestamps(); this.updateDurationDisplay(); });
+                    if (this.audio.readyState >= 1) { this.calculateTimestamps(); this.updateDurationDisplay(); }
                     this.renderLyrics(this.currentTab);
                     this.setActiveLine(-1);
-                    this.updateFloatDisplay();
                 }
 
                 setupData() {
-                    // 根据课程ID设置数据
                     const id = this.config.id;
                     if (id === 'd1') {
-                        this.part1Lines = ['— Hola, ¿cómo te llamas?', '— Me llamo Ana.', '— ¿Cómo te apellidas?', '— Me apellido García.', '— ¿Cómo se escribe tu apellido?', '— Se escribe G-A-R-C-Í-A.', '— ¿De dónde eres?', '— Soy de España.', '— ¿Qué lenguas hablas?', '— Hablo español y un poco de francés.', '— ¿Cuántos años tienes?', '— Tengo veinticinco años.', '— ¿A qué te dedicas?', '— Soy profesora.', '— Y tú, ¿cómo te llamas?', '— Me llamo Luis.', '— ¿Cómo te apellidas?', '— Me apellido López.', '— ¿Cómo se escribe tu nombre?', '— Se escribe L-U-I-S.', '— ¿De dónde eres?', '— Soy de México.', '— ¿Qué lenguas hablas?', '— Hablo español y un poco de inglés.', '— ¿Cuántos años tienes?', '— Tengo treinta años.', '— ¿A qué te dedicas?', '— Soy economista.'];
-                        this.part2Lines = [{es:'— Hola, ¿cómo te llamas?', en:"Hi, what's your name?"}, {es:'— Me llamo Ana.', en:'My name is Ana.'}, {es:'— ¿Cómo te apellidas?', en:"What's your last name?"}, {es:'— Me apellido García.', en:'My last name is García.'}, {es:'— ¿Cómo se escribe tu apellido?', en:'How do you spell your last name?'}, {es:'— Se escribe G-A-R-C-Í-A.', en:"It's spelled G-A-R-C-Í-A."}, {es:'— ¿De dónde eres?', en:'Where are you from?'}, {es:'— Soy de España.', en:"I'm from Spain."}, {es:'— ¿Qué lenguas hablas?', en:'What languages do you speak?'}, {es:'— Hablo español y un poco de francés.', en:'I speak Spanish and a little French.'}, {es:'— ¿Cuántos años tienes?', en:'How old are you?'}, {es:'— Tengo veinticinco años.', en:"I'm twenty-five years old."}, {es:'— ¿A qué te dedicas?', en:'What do you do?'}, {es:'— Soy profesora.', en:"I'm a teacher."}, {es:'— Y tú, ¿cómo te llamas?', en:"And you, what's your name?"}, {es:'— Me llamo Luis.', en:'My name is Luis.'}, {es:'— ¿Cómo te apellidas?', en:"What's your last name?"}, {es:'— Me apellido López.', en:'My last name is López.'}, {es:'— ¿Cómo se escribe tu nombre?', en:'How do you spell your first name?'}, {es:'— Se escribe L-U-I-S.', en:"It's spelled L-U-I-S."}, {es:'— ¿De dónde eres?', en:'Where are you from?'}, {es:'— Soy de México.', en:"I'm from Mexico."}, {es:'— ¿Qué lenguas hablas?', en:'What languages do you speak?'}, {es:'— Hablo español y un poco de inglés.', en:'I speak Spanish and a little English.'}, {es:'— ¿Cuántos años tienes?', en:'How old are you?'}, {es:'— Tengo treinta años.', en:"I'm thirty years old."}, {es:'— ¿A qué te dedicas?', en:'What do you do?'}, {es:'— Soy economista.', en:"I'm an economist."}];
-                        this.part3Lines = ['— Hi, what\'s your name?', '— My name is Ana.', '— What\'s your last name?', '— My last name is García.', '— How do you spell your last name?', '— It\'s spelled G-A-R-C-Í-A.', '— Where are you from?', '— I\'m from Spain.', '— What languages do you speak?', '— I speak Spanish and a little French.', '— How old are you?', '— I\'m twenty-five years old.', '— What do you do?', '— I\'m a teacher.', '— And you, what\'s your name?', '— My name is Luis.', '— What\'s your last name?', '— My last name is López.', '— How do you spell your first name?', '— It\'s spelled L-U-I-S.', '— Where are you from?', '— I\'m from Mexico.', '— What languages do you speak?', '— I speak Spanish and a little English.', '— How old are you?', '— I\'m thirty years old.', '— What do you do?', '— I\'m an economist.'];
+                        this.part1Lines = ['— Hola, ¿cómo te llamas?','— Me llamo Ana.','— ¿Cómo te apellidas?','— Me apellido García.','— ¿Cómo se escribe tu apellido?','— Se escribe G-A-R-C-Í-A.','— ¿De dónde eres?','— Soy de España.','— ¿Qué lenguas hablas?','— Hablo español y un poco de francés.','— ¿Cuántos años tienes?','— Tengo veinticinco años.','— ¿A qué te dedicas?','— Soy profesora.','— Y tú, ¿cómo te llamas?','— Me llamo Luis.','— ¿Cómo te apellidas?','— Me apellido López.','— ¿Cómo se escribe tu nombre?','— Se escribe L-U-I-S.','— ¿De dónde eres?','— Soy de México.','— ¿Qué lenguas hablas?','— Hablo español y un poco de inglés.','— ¿Cuántos años tienes?','— Tengo treinta años.','— ¿A qué te dedicas?','— Soy economista.'];
+                        this.part2Lines = [{es:'— Hola, ¿cómo te llamas?', en:"Hi, what's your name?"},{es:'— Me llamo Ana.', en:'My name is Ana.'},{es:'— ¿Cómo te apellidas?', en:"What's your last name?"},{es:'— Me apellido García.', en:'My last name is García.'},{es:'— ¿Cómo se escribe tu apellido?', en:'How do you spell your last name?'},{es:'— Se escribe G-A-R-C-Í-A.', en:"It's spelled G-A-R-C-Í-A."},{es:'— ¿De dónde eres?', en:'Where are you from?'},{es:'— Soy de España.', en:"I'm from Spain."},{es:'— ¿Qué lenguas hablas?', en:'What languages do you speak?'},{es:'— Hablo español y un poco de francés.', en:'I speak Spanish and a little French.'},{es:'— ¿Cuántos años tienes?', en:'How old are you?'},{es:'— Tengo veinticinco años.', en:"I'm twenty-five years old."},{es:'— ¿A qué te dedicas?', en:'What do you do?'},{es:'— Soy profesora.', en:"I'm a teacher."},{es:'— Y tú, ¿cómo te llamas?', en:"And you, what's your name?"},{es:'— Me llamo Luis.', en:'My name is Luis.'},{es:'— ¿Cómo te apellidas?', en:"What's your last name?"},{es:'— Me apellido López.', en:'My last name is López.'},{es:'— ¿Cómo se escribe tu nombre?', en:'How do you spell your first name?'},{es:'— Se escribe L-U-I-S.', en:"It's spelled L-U-I-S."},{es:'— ¿De dónde eres?', en:'Where are you from?'},{es:'— Soy de México.', en:"I'm from Mexico."},{es:'— ¿Qué lenguas hablas?', en:'What languages do you speak?'},{es:'— Hablo español y un poco de inglés.', en:'I speak Spanish and a little English.'},{es:'— ¿Cuántos años tienes?', en:'How old are you?'},{es:'— Tengo treinta años.', en:"I'm thirty years old."},{es:'— ¿A qué te dedicas?', en:'What do you do?'},{es:'— Soy economista.', en:"I'm an economist."}];
+                        this.part3Lines = ['— Hi, what\'s your name?','— My name is Ana.','— What\'s your last name?','— My last name is García.','— How do you spell your last name?','— It\'s spelled G-A-R-C-Í-A.','— Where are you from?','— I\'m from Spain.','— What languages do you speak?','— I speak Spanish and a little French.','— How old are you?','— I\'m twenty-five years old.','— What do you do?','— I\'m a teacher.','— And you, what\'s your name?','— My name is Luis.','— What\'s your last name?','— My last name is López.','— How do you spell your first name?','— It\'s spelled L-U-I-S.','— Where are you from?','— I\'m from Mexico.','— What languages do you speak?','— I speak Spanish and a little English.','— How old are you?','— I\'m thirty years old.','— What do you do?','— I\'m an economist.'];
                     } else if (id === 'd2') {
-                        this.part1Lines = ['— Buenos días, ¿cómo te llamas?', '— Me llamo Marta.', '— ¿Cómo te apellidas?', '— Me apellido Fernández.', '— ¿Cómo se escribe tu nombre?', '— Se escribe M-A-R-T-A.', '— ¿De dónde eres?', '— Soy de Argentina.', '— ¿Qué lenguas hablas?', '— Hablo español y un poco de italiano.', '— ¿Cuántos años tienes?', '— Tengo veintiocho años.', '— ¿A qué te dedicas?', '— Soy doctora.', '— Y tú, ¿cómo te llamas?', '— Me llamo Carlos.', '— ¿Cómo te apellidas?', '— Me apellido Ruiz.', '— ¿Cómo se escribe tu apellido?', '— Se escribe R-U-I-Z.', '— ¿De dónde eres?', '— Soy de China.', '— ¿Qué lenguas hablas?', '— Hablo chino, español y un poco de japonés.', '— ¿Cuántos años tienes?', '— Tengo cuarenta y dos años.', '— ¿A qué te dedicas?', '— Soy profesor.'];
-                        this.part2Lines = [{es:'— Buenos días, ¿cómo te llamas?', en:"Good morning, what's your name?"}, {es:'— Me llamo Marta.', en:'My name is Marta.'}, {es:'— ¿Cómo te apellidas?', en:"What's your last name?"}, {es:'— Me apellido Fernández.', en:'My last name is Fernández.'}, {es:'— ¿Cómo se escribe tu nombre?', en:'How do you spell your first name?'}, {es:'— Se escribe M-A-R-T-A.', en:"It's spelled M-A-R-T-A."}, {es:'— ¿De dónde eres?', en:'Where are you from?'}, {es:'— Soy de Argentina.', en:"I'm from Argentina."}, {es:'— ¿Qué lenguas hablas?', en:'What languages do you speak?'}, {es:'— Hablo español y un poco de italiano.', en:'I speak Spanish and a little Italian.'}, {es:'— ¿Cuántos años tienes?', en:'How old are you?'}, {es:'— Tengo veintiocho años.', en:"I'm twenty-eight years old."}, {es:'— ¿A qué te dedicas?', en:'What do you do?'}, {es:'— Soy doctora.', en:"I'm a doctor."}, {es:'— Y tú, ¿cómo te llamas?', en:"And you, what's your name?"}, {es:'— Me llamo Carlos.', en:'My name is Carlos.'}, {es:'— ¿Cómo te apellidas?', en:"What's your last name?"}, {es:'— Me apellido Ruiz.', en:'My last name is Ruiz.'}, {es:'— ¿Cómo se escribe tu apellido?', en:'How do you spell your last name?'}, {es:'— Se escribe R-U-I-Z.', en:"It's spelled R-U-I-Z."}, {es:'— ¿De dónde eres?', en:'Where are you from?'}, {es:'— Soy de China.', en:"I'm from China."}, {es:'— ¿Qué lenguas hablas?', en:'What languages do you speak?'}, {es:'— Hablo chino, español y un poco de japonés.', en:'I speak Chinese, Spanish and a little Japanese.'}, {es:'— ¿Cuántos años tienes?', en:'How old are you?'}, {es:'— Tengo cuarenta y dos años.', en:"I'm forty-two years old."}, {es:'— ¿A qué te dedicas?', en:'What do you do?'}, {es:'— Soy profesor.', en:"I'm a teacher."}];
-                        this.part3Lines = ['— Good morning, what\'s your name?', '— My name is Marta.', '— What\'s your last name?', '— My last name is Fernández.', '— How do you spell your first name?', '— It\'s spelled M-A-R-T-A.', '— Where are you from?', '— I\'m from Argentina.', '— What languages do you speak?', '— I speak Spanish and a little Italian.', '— How old are you?', '— I\'m twenty-eight years old.', '— What do you do?', '— I\'m a doctor.', '— And you, what\'s your name?', '— My name is Carlos.', '— What\'s your last name?', '— My last name is Ruiz.', '— How do you spell your last name?', '— It\'s spelled R-U-I-Z.', '— Where are you from?', '— I\'m from China.', '— What languages do you speak?', '— I speak Chinese, Spanish and a little Japanese.', '— How old are you?', '— I\'m forty-two years old.', '— What do you do?', '— I\'m a teacher.'];
+                        this.part1Lines = ['— Buenos días, ¿cómo te llamas?','— Me llamo Marta.','— ¿Cómo te apellidas?','— Me apellido Fernández.','— ¿Cómo se escribe tu nombre?','— Se escribe M-A-R-T-A.','— ¿De dónde eres?','— Soy de Argentina.','— ¿Qué lenguas hablas?','— Hablo español y un poco de italiano.','— ¿Cuántos años tienes?','— Tengo veintiocho años.','— ¿A qué te dedicas?','— Soy doctora.','— Y tú, ¿cómo te llamas?','— Me llamo Carlos.','— ¿Cómo te apellidas?','— Me apellido Ruiz.','— ¿Cómo se escribe tu apellido?','— Se escribe R-U-I-Z.','— ¿De dónde eres?','— Soy de China.','— ¿Qué lenguas hablas?','— Hablo chino, español y un poco de japonés.','— ¿Cuántos años tienes?','— Tengo cuarenta y dos años.','— ¿A qué te dedicas?','— Soy profesor.'];
+                        this.part2Lines = [{es:'— Buenos días, ¿cómo te llamas?', en:"Good morning, what's your name?"},{es:'— Me llamo Marta.', en:'My name is Marta.'},{es:'— ¿Cómo te apellidas?', en:"What's your last name?"},{es:'— Me apellido Fernández.', en:'My last name is Fernández.'},{es:'— ¿Cómo se escribe tu nombre?', en:'How do you spell your first name?'},{es:'— Se escribe M-A-R-T-A.', en:"It's spelled M-A-R-T-A."},{es:'— ¿De dónde eres?', en:'Where are you from?'},{es:'— Soy de Argentina.', en:"I'm from Argentina."},{es:'— ¿Qué lenguas hablas?', en:'What languages do you speak?'},{es:'— Hablo español y un poco de italiano.', en:'I speak Spanish and a little Italian.'},{es:'— ¿Cuántos años tienes?', en:'How old are you?'},{es:'— Tengo veintiocho años.', en:"I'm twenty-eight years old."},{es:'— ¿A qué te dedicas?', en:'What do you do?'},{es:'— Soy doctora.', en:"I'm a doctor."},{es:'— Y tú, ¿cómo te llamas?', en:"And you, what's your name?"},{es:'— Me llamo Carlos.', en:'My name is Carlos.'},{es:'— ¿Cómo te apellidas?', en:"What's your last name?"},{es:'— Me apellido Ruiz.', en:'My last name is Ruiz.'},{es:'— ¿Cómo se escribe tu apellido?', en:'How do you spell your last name?'},{es:'— Se escribe R-U-I-Z.', en:"It's spelled R-U-I-Z."},{es:'— ¿De dónde eres?', en:'Where are you from?'},{es:'— Soy de China.', en:"I'm from China."},{es:'— ¿Qué lenguas hablas?', en:'What languages do you speak?'},{es:'— Hablo chino, español y un poco de japonés.', en:'I speak Chinese, Spanish and a little Japanese.'},{es:'— ¿Cuántos años tienes?', en:'How old are you?'},{es:'— Tengo cuarenta y dos años.', en:"I'm forty-two years old."},{es:'— ¿A qué te dedicas?', en:'What do you do?'},{es:'— Soy profesor.', en:"I'm a teacher."}];
+                        this.part3Lines = ['— Good morning, what\'s your name?','— My name is Marta.','— What\'s your last name?','— My last name is Fernández.','— How do you spell your first name?','— It\'s spelled M-A-R-T-A.','— Where are you from?','— I\'m from Argentina.','— What languages do you speak?','— I speak Spanish and a little Italian.','— How old are you?','— I\'m twenty-eight years old.','— What do you do?','— I\'m a doctor.','— And you, what\'s your name?','— My name is Carlos.','— What\'s your last name?','— My last name is Ruiz.','— How do you spell your last name?','— It\'s spelled R-U-I-Z.','— Where are you from?','— I\'m from China.','— What languages do you speak?','— I speak Chinese, Spanish and a little Japanese.','— How old are you?','— I\'m forty-two years old.','— What do you do?','— I\'m a teacher.'];
                     } else if (id === 'd3') {
-                        this.part1Lines = ['— Hola, ¿cómo te llamas?', '— Me llamo Sofía.', '— ¿Cómo te apellidas?', '— Me apellido Martínez.', '— ¿Cómo se escribe tu apellido?', '— Se escribe M-A-R-T-Í-N-E-Z.', '— ¿De dónde eres?', '— Soy de Francia.', '— ¿Qué lenguas hablas?', '— Hablo francés y un poco de español.', '— ¿Cuántos años tienes?', '— Tengo treinta y dos años.', '— ¿A qué te dedicas?', '— Soy doctora.', '— Y tú, ¿cómo te llamas?', '— Me llamo Diego.', '— ¿Cómo te apellidas?', '— Me apellido Pérez.', '— ¿Cómo se escribe tu nombre?', '— Se escribe D-I-E-G-O.', '— ¿De dónde eres?', '— Soy de Japón.', '— ¿Qué lenguas hablas?', '— Hablo japonés, español y un poco de inglés.', '— ¿Cuántos años tienes?', '— Tengo veintinueve años.', '— ¿A qué te dedicas?', '— Soy profesor.'];
-                        this.part2Lines = [{es:'— Hola, ¿cómo te llamas?', en:"Hi, what's your name?"}, {es:'— Me llamo Sofía.', en:'My name is Sofía.'}, {es:'— ¿Cómo te apellidas?', en:"What's your last name?"}, {es:'— Me apellido Martínez.', en:'My last name is Martínez.'}, {es:'— ¿Cómo se escribe tu apellido?', en:'How do you spell your last name?'}, {es:'— Se escribe M-A-R-T-Í-N-E-Z.', en:"It's spelled M-A-R-T-Í-N-E-Z."}, {es:'— ¿De dónde eres?', en:'Where are you from?'}, {es:'— Soy de Francia.', en:"I'm from France."}, {es:'— ¿Qué lenguas hablas?', en:'What languages do you speak?'}, {es:'— Hablo francés y un poco de español.', en:'I speak French and a little Spanish.'}, {es:'— ¿Cuántos años tienes?', en:'How old are you?'}, {es:'— Tengo treinta y dos años.', en:"I'm thirty-two years old."}, {es:'— ¿A qué te dedicas?', en:'What do you do?'}, {es:'— Soy doctora.', en:"I'm a doctor."}, {es:'— Y tú, ¿cómo te llamas?', en:"And you, what's your name?"}, {es:'— Me llamo Diego.', en:'My name is Diego.'}, {es:'— ¿Cómo te apellidas?', en:"What's your last name?"}, {es:'— Me apellido Pérez.', en:'My last name is Pérez.'}, {es:'— ¿Cómo se escribe tu nombre?', en:'How do you spell your first name?'}, {es:'— Se escribe D-I-E-G-O.', en:"It's spelled D-I-E-G-O."}, {es:'— ¿De dónde eres?', en:'Where are you from?'}, {es:'— Soy de Japón.', en:"I'm from Japan."}, {es:'— ¿Qué lenguas hablas?', en:'What languages do you speak?'}, {es:'— Hablo japonés, español y un poco de inglés.', en:'I speak Japanese, Spanish and a little English.'}, {es:'— ¿Cuántos años tienes?', en:'How old are you?'}, {es:'— Tengo veintinueve años.', en:"I'm twenty-nine years old."}, {es:'— ¿A qué te dedicas?', en:'What do you do?'}, {es:'— Soy profesor.', en:"I'm a teacher."}];
-                        this.part3Lines = ['— Hi, what\'s your name?', '— My name is Sofía.', '— What\'s your last name?', '— My last name is Martínez.', '— How do you spell your last name?', '— It\'s spelled M-A-R-T-Í-N-E-Z.', '— Where are you from?', '— I\'m from France.', '— What languages do you speak?', '— I speak French and a little Spanish.', '— How old are you?', '— I\'m thirty-two years old.', '— What do you do?', '— I\'m a doctor.', '— And you, what\'s your name?', '— My name is Diego.', '— What\'s your last name?', '— My last name is Pérez.', '— How do you spell your first name?', '— It\'s spelled D-I-E-G-O.', '— Where are you from?', '— I\'m from Japan.', '— What languages do you speak?', '— I speak Japanese, Spanish and a little English.', '— How old are you?', '— I\'m twenty-nine years old.', '— What do you do?', '— I\'m a teacher.'];
+                        this.part1Lines = ['— Hola, ¿cómo te llamas?','— Me llamo Sofía.','— ¿Cómo te apellidas?','— Me apellido Martínez.','— ¿Cómo se escribe tu apellido?','— Se escribe M-A-R-T-Í-N-E-Z.','— ¿De dónde eres?','— Soy de Francia.','— ¿Qué lenguas hablas?','— Hablo francés y un poco de español.','— ¿Cuántos años tienes?','— Tengo treinta y dos años.','— ¿A qué te dedicas?','— Soy doctora.','— Y tú, ¿cómo te llamas?','— Me llamo Diego.','— ¿Cómo te apellidas?','— Me apellido Pérez.','— ¿Cómo se escribe tu nombre?','— Se escribe D-I-E-G-O.','— ¿De dónde eres?','— Soy de Japón.','— ¿Qué lenguas hablas?','— Hablo japonés, español y un poco de inglés.','— ¿Cuántos años tienes?','— Tengo veintinueve años.','— ¿A qué te dedicas?','— Soy profesor.'];
+                        this.part2Lines = [{es:'— Hola, ¿cómo te llamas?', en:"Hi, what's your name?"},{es:'— Me llamo Sofía.', en:'My name is Sofía.'},{es:'— ¿Cómo te apellidas?', en:"What's your last name?"},{es:'— Me apellido Martínez.', en:'My last name is Martínez.'},{es:'— ¿Cómo se escribe tu apellido?', en:'How do you spell your last name?'},{es:'— Se escribe M-A-R-T-Í-N-E-Z.', en:"It's spelled M-A-R-T-Í-N-E-Z."},{es:'— ¿De dónde eres?', en:'Where are you from?'},{es:'— Soy de Francia.', en:"I'm from France."},{es:'— ¿Qué lenguas hablas?', en:'What languages do you speak?'},{es:'— Hablo francés y un poco de español.', en:'I speak French and a little Spanish.'},{es:'— ¿Cuántos años tienes?', en:'How old are you?'},{es:'— Tengo treinta y dos años.', en:"I'm thirty-two years old."},{es:'— ¿A qué te dedicas?', en:'What do you do?'},{es:'— Soy doctora.', en:"I'm a doctor."},{es:'— Y tú, ¿cómo te llamas?', en:"And you, what's your name?"},{es:'— Me llamo Diego.', en:'My name is Diego.'},{es:'— ¿Cómo te apellidas?', en:"What's your last name?"},{es:'— Me apellido Pérez.', en:'My last name is Pérez.'},{es:'— ¿Cómo se escribe tu nombre?', en:'How do you spell your first name?'},{es:'— Se escribe D-I-E-G-O.', en:"It's spelled D-I-E-G-O."},{es:'— ¿De dónde eres?', en:'Where are you from?'},{es:'— Soy de Japón.', en:"I'm from Japan."},{es:'— ¿Qué lenguas hablas?', en:'What languages do you speak?'},{es:'— Hablo japonés, español y un poco de inglés.', en:'I speak Japanese, Spanish and a little English.'},{es:'— ¿Cuántos años tienes?', en:'How old are you?'},{es:'— Tengo veintinueve años.', en:"I'm twenty-nine years old."},{es:'— ¿A qué te dedicas?', en:'What do you do?'},{es:'— Soy profesor.', en:"I'm a teacher."}];
+                        this.part3Lines = ['— Hi, what\'s your name?','— My name is Sofía.','— What\'s your last name?','— My last name is Martínez.','— How do you spell your last name?','— It\'s spelled M-A-R-T-Í-N-E-Z.','— Where are you from?','— I\'m from France.','— What languages do you speak?','— I speak French and a little Spanish.','— How old are you?','— I\'m thirty-two years old.','— What do you do?','— I\'m a doctor.','— And you, what\'s your name?','— My name is Diego.','— What\'s your last name?','— My last name is Pérez.','— How do you spell your first name?','— It\'s spelled D-I-E-G-O.','— Where are you from?','— I\'m from Japan.','— What languages do you speak?','— I speak Japanese, Spanish and a little English.','— How old are you?','— I\'m twenty-nine years old.','— What do you do?','— I\'m a teacher.'];
                     } else if (id === 'd4') {
-                        this.part1Lines = ['— Buenos días, ¿cómo te llamas?', '— Me llamo Elena.', '— ¿Cómo te apellidas?', '— Me apellido González.', '— ¿Cómo se escribe tu nombre?', '— Se escribe E-L-E-N-A.', '— ¿De dónde eres?', '— Soy de Alemania.', '— ¿Qué lenguas hablas?', '— Hablo alemán y un poco de italiano.', '— ¿Cuántos años tienes?', '— Tengo cuarenta y uno años.', '— ¿A qué te dedicas?', '— Soy economista.', '— Y tú, ¿cómo te llamas?', '— Me llamo Juan.', '— ¿Cómo te apellidas?', '— Me apellido Rodríguez.', '— ¿Cómo se escribe tu apellido?', '— Se escribe R-O-D-R-Í-G-U-E-Z.', '— ¿De dónde eres?', '— Soy de China.', '— ¿Qué lenguas hablas?', '— Hablo chino, español y un poco de francés.', '— ¿Cuántos años tienes?', '— Tengo treinta y cinco años.', '— ¿A qué te dedicas?', '— Soy maestro.'];
-                        this.part2Lines = [{es:'— Buenos días, ¿cómo te llamas?', en:"Good morning, what's your name?"}, {es:'— Me llamo Elena.', en:'My name is Elena.'}, {es:'— ¿Cómo te apellidas?', en:"What's your last name?"}, {es:'— Me apellido González.', en:'My last name is González.'}, {es:'— ¿Cómo se escribe tu nombre?', en:'How do you spell your first name?'}, {es:'— Se escribe E-L-E-N-A.', en:"It's spelled E-L-E-N-A."}, {es:'— ¿De dónde eres?', en:'Where are you from?'}, {es:'— Soy de Alemania.', en:"I'm from Germany."}, {es:'— ¿Qué lenguas hablas?', en:'What languages do you speak?'}, {es:'— Hablo alemán y un poco de italiano.', en:'I speak German and a little Italian.'}, {es:'— ¿Cuántos años tienes?', en:'How old are you?'}, {es:'— Tengo cuarenta y uno años.', en:"I'm forty-one years old."}, {es:'— ¿A qué te dedicas?', en:'What do you do?'}, {es:'— Soy economista.', en:"I'm an economist."}, {es:'— Y tú, ¿cómo te llamas?', en:"And you, what's your name?"}, {es:'— Me llamo Juan.', en:'My name is Juan.'}, {es:'— ¿Cómo te apellidas?', en:"What's your last name?"}, {es:'— Me apellido Rodríguez.', en:'My last name is Rodríguez.'}, {es:'— ¿Cómo se escribe tu apellido?', en:'How do you spell your last name?'}, {es:'— Se escribe R-O-D-R-Í-G-U-E-Z.', en:"It's spelled R-O-D-R-Í-G-U-E-Z."}, {es:'— ¿De dónde eres?', en:'Where are you from?'}, {es:'— Soy de China.', en:"I'm from China."}, {es:'— ¿Qué lenguas hablas?', en:'What languages do you speak?'}, {es:'— Hablo chino, español y un poco de francés.', en:'I speak Chinese, Spanish and a little French.'}, {es:'— ¿Cuántos años tienes?', en:'How old are you?'}, {es:'— Tengo treinta y cinco años.', en:"I'm thirty-five years old."}, {es:'— ¿A qué te dedicas?', en:'What do you do?'}, {es:'— Soy maestro.', en:"I'm a teacher."}];
-                        this.part3Lines = ['— Good morning, what\'s your name?', '— My name is Elena.', '— What\'s your last name?', '— My last name is González.', '— How do you spell your first name?', '— It\'s spelled E-L-E-N-A.', '— Where are you from?', '— I\'m from Germany.', '— What languages do you speak?', '— I speak German and a little Italian.', '— How old are you?', '— I\'m forty-one years old.', '— What do you do?', '— I\'m an economist.', '— And you, what\'s your name?', '— My name is Juan.', '— What\'s your last name?', '— My last name is Rodríguez.', '— How do you spell your last name?', '— It\'s spelled R-O-D-R-Í-G-U-E-Z.', '— Where are you from?', '— I\'m from China.', '— What languages do you speak?', '— I speak Chinese, Spanish and a little French.', '— How old are you?', '— I\'m thirty-five years old.', '— What do you do?', '— I\'m a teacher.'];
+                        this.part1Lines = ['— Buenos días, ¿cómo te llamas?','— Me llamo Elena.','— ¿Cómo te apellidas?','— Me apellido González.','— ¿Cómo se escribe tu nombre?','— Se escribe E-L-E-N-A.','— ¿De dónde eres?','— Soy de Alemania.','— ¿Qué lenguas hablas?','— Hablo alemán y un poco de italiano.','— ¿Cuántos años tienes?','— Tengo cuarenta y uno años.','— ¿A qué te dedicas?','— Soy economista.','— Y tú, ¿cómo te llamas?','— Me llamo Juan.','— ¿Cómo te apellidas?','— Me apellido Rodríguez.','— ¿Cómo se escribe tu apellido?','— Se escribe R-O-D-R-Í-G-U-E-Z.','— ¿De dónde eres?','— Soy de China.','— ¿Qué lenguas hablas?','— Hablo chino, español y un poco de francés.','— ¿Cuántos años tienes?','— Tengo treinta y cinco años.','— ¿A qué te dedicas?','— Soy maestro.'];
+                        this.part2Lines = [{es:'— Buenos días, ¿cómo te llamas?', en:"Good morning, what's your name?"},{es:'— Me llamo Elena.', en:'My name is Elena.'},{es:'— ¿Cómo te apellidas?', en:"What's your last name?"},{es:'— Me apellido González.', en:'My last name is González.'},{es:'— ¿Cómo se escribe tu nombre?', en:'How do you spell your first name?'},{es:'— Se escribe E-L-E-N-A.', en:"It's spelled E-L-E-N-A."},{es:'— ¿De dónde eres?', en:'Where are you from?'},{es:'— Soy de Alemania.', en:"I'm from Germany."},{es:'— ¿Qué lenguas hablas?', en:'What languages do you speak?'},{es:'— Hablo alemán y un poco de italiano.', en:'I speak German and a little Italian.'},{es:'— ¿Cuántos años tienes?', en:'How old are you?'},{es:'— Tengo cuarenta y uno años.', en:"I'm forty-one years old."},{es:'— ¿A qué te dedicas?', en:'What do you do?'},{es:'— Soy economista.', en:"I'm an economist."},{es:'— Y tú, ¿cómo te llamas?', en:"And you, what's your name?"},{es:'— Me llamo Juan.', en:'My name is Juan.'},{es:'— ¿Cómo te apellidas?', en:"What's your last name?"},{es:'— Me apellido Rodríguez.', en:'My last name is Rodríguez.'},{es:'— ¿Cómo se escribe tu apellido?', en:'How do you spell your last name?'},{es:'— Se escribe R-O-D-R-Í-G-U-E-Z.', en:"It's spelled R-O-D-R-Í-G-U-E-Z."},{es:'— ¿De dónde eres?', en:'Where are you from?'},{es:'— Soy de China.', en:"I'm from China."},{es:'— ¿Qué lenguas hablas?', en:'What languages do you speak?'},{es:'— Hablo chino, español y un poco de francés.', en:'I speak Chinese, Spanish and a little French.'},{es:'— ¿Cuántos años tienes?', en:'How old are you?'},{es:'— Tengo treinta y cinco años.', en:"I'm thirty-five years old."},{es:'— ¿A qué te dedicas?', en:'What do you do?'},{es:'— Soy maestro.', en:"I'm a teacher."}];
+                        this.part3Lines = ['— Good morning, what\'s your name?','— My name is Elena.','— What\'s your last name?','— My last name is González.','— How do you spell your first name?','— It\'s spelled E-L-E-N-A.','— Where are you from?','— I\'m from Germany.','— What languages do you speak?','— I speak German and a little Italian.','— How old are you?','— I\'m forty-one years old.','— What do you do?','— I\'m an economist.','— And you, what\'s your name?','— My name is Juan.','— What\'s your last name?','— My last name is Rodríguez.','— How do you spell your last name?','— It\'s spelled R-O-D-R-Í-G-U-E-Z.','— Where are you from?','— I\'m from China.','— What languages do you speak?','— I speak Chinese, Spanish and a little French.','— How old are you?','— I\'m thirty-five years old.','— What do you do?','— I\'m a teacher.'];
                     } else if (id === 'd5') {
-                        this.part1Lines = ['— Hola, ¿cómo te llamas?', '— Me llamo Pablo.', '— ¿Cómo te apellidas?', '— Me apellido Sánchez.', '— ¿Cómo se escribe tu apellido?', '— Se escribe S-Á-N-C-H-E-Z.', '— ¿De dónde eres?', '— Soy de Brasil.', '— ¿Qué lenguas hablas?', '— Hablo portugués y un poco de español.', '— ¿Cuántos años tienes?', '— Tengo veintidós años.', '— ¿A qué te dedicas?', '— Soy doctor.', '— Y tú, ¿cómo te llamas?', '— Me llamo Lucía.', '— ¿Cómo te apellidas?', '— Me apellido Torres.', '— ¿Cómo se escribe tu nombre?', '— Se escribe L-U-C-Í-A.', '— ¿De dónde eres?', '— Soy de Italia.', '— ¿Qué lenguas hablas?', '— Hablo italiano y un poco de alemán.', '— ¿Cuántos años tienes?', '— Tengo veintisiete años.', '— ¿A qué te dedicas?', '— Soy profesora.'];
-                        this.part2Lines = [{es:'— Hola, ¿cómo te llamas?', en:"Hi, what's your name?"}, {es:'— Me llamo Pablo.', en:'My name is Pablo.'}, {es:'— ¿Cómo te apellidas?', en:"What's your last name?"}, {es:'— Me apellido Sánchez.', en:'My last name is Sánchez.'}, {es:'— ¿Cómo se escribe tu apellido?', en:'How do you spell your last name?'}, {es:'— Se escribe S-Á-N-C-H-E-Z.', en:"It's spelled S-Á-N-C-H-E-Z."}, {es:'— ¿De dónde eres?', en:'Where are you from?'}, {es:'— Soy de Brasil.', en:"I'm from Brazil."}, {es:'— ¿Qué lenguas hablas?', en:'What languages do you speak?'}, {es:'— Hablo portugués y un poco de español.', en:'I speak Portuguese and a little Spanish.'}, {es:'— ¿Cuántos años tienes?', en:'How old are you?'}, {es:'— Tengo veintidós años.', en:"I'm twenty-two years old."}, {es:'— ¿A qué te dedicas?', en:'What do you do?'}, {es:'— Soy doctor.', en:"I'm a doctor."}, {es:'— Y tú, ¿cómo te llamas?', en:"And you, what's your name?"}, {es:'— Me llamo Lucía.', en:'My name is Lucía.'}, {es:'— ¿Cómo te apellidas?', en:"What's your last name?"}, {es:'— Me apellido Torres.', en:'My last name is Torres.'}, {es:'— ¿Cómo se escribe tu nombre?', en:'How do you spell your first name?'}, {es:'— Se escribe L-U-C-Í-A.', en:"It's spelled L-U-C-Í-A."}, {es:'— ¿De dónde eres?', en:'Where are you from?'}, {es:'— Soy de Italia.', en:"I'm from Italy."}, {es:'— ¿Qué lenguas hablas?', en:'What languages do you speak?'}, {es:'— Hablo italiano y un poco de alemán.', en:'I speak Italian and a little German.'}, {es:'— ¿Cuántos años tienes?', en:'How old are you?'}, {es:'— Tengo veintisiete años.', en:"I'm twenty-seven years old."}, {es:'— ¿A qué te dedicas?', en:'What do you do?'}, {es:'— Soy profesora.', en:"I'm a teacher."}];
-                        this.part3Lines = ['— Hi, what\'s your name?', '— My name is Pablo.', '— What\'s your last name?', '— My last name is Sánchez.', '— How do you spell your last name?', '— It\'s spelled S-Á-N-C-H-E-Z.', '— Where are you from?', '— I\'m from Brazil.', '— What languages do you speak?', '— I speak Portuguese and a little Spanish.', '— How old are you?', '— I\'m twenty-two years old.', '— What do you do?', '— I\'m a doctor.', '— And you, what\'s your name?', '— My name is Lucía.', '— What\'s your last name?', '— My last name is Torres.', '— How do you spell your first name?', '— It\'s spelled L-U-C-Í-A.', '— Where are you from?', '— I\'m from Italy.', '— What languages do you speak?', '— I speak Italian and a little German.', '— How old are you?', '— I\'m twenty-seven years old.', '— What do you do?', '— I\'m a teacher.'];
+                        this.part1Lines = ['— Hola, ¿cómo te llamas?','— Me llamo Pablo.','— ¿Cómo te apellidas?','— Me apellido Sánchez.','— ¿Cómo se escribe tu apellido?','— Se escribe S-Á-N-C-H-E-Z.','— ¿De dónde eres?','— Soy de Brasil.','— ¿Qué lenguas hablas?','— Hablo portugués y un poco de español.','— ¿Cuántos años tienes?','— Tengo veintidós años.','— ¿A qué te dedicas?','— Soy doctor.','— Y tú, ¿cómo te llamas?','— Me llamo Lucía.','— ¿Cómo te apellidas?','— Me apellido Torres.','— ¿Cómo se escribe tu nombre?','— Se escribe L-U-C-Í-A.','— ¿De dónde eres?','— Soy de Italia.','— ¿Qué lenguas hablas?','— Hablo italiano y un poco de alemán.','— ¿Cuántos años tienes?','— Tengo veintisiete años.','— ¿A qué te dedicas?','— Soy profesora.'];
+                        this.part2Lines = [{es:'— Hola, ¿cómo te llamas?', en:"Hi, what's your name?"},{es:'— Me llamo Pablo.', en:'My name is Pablo.'},{es:'— ¿Cómo te apellidas?', en:"What's your last name?"},{es:'— Me apellido Sánchez.', en:'My last name is Sánchez.'},{es:'— ¿Cómo se escribe tu apellido?', en:'How do you spell your last name?'},{es:'— Se escribe S-Á-N-C-H-E-Z.', en:"It's spelled S-Á-N-C-H-E-Z."},{es:'— ¿De dónde eres?', en:'Where are you from?'},{es:'— Soy de Brasil.', en:"I'm from Brazil."},{es:'— ¿Qué lenguas hablas?', en:'What languages do you speak?'},{es:'— Hablo portugués y un poco de español.', en:'I speak Portuguese and a little Spanish.'},{es:'— ¿Cuántos años tienes?', en:'How old are you?'},{es:'— Tengo veintidós años.', en:"I'm twenty-two years old."},{es:'— ¿A qué te dedicas?', en:'What do you do?'},{es:'— Soy doctor.', en:"I'm a doctor."},{es:'— Y tú, ¿cómo te llamas?', en:"And you, what's your name?"},{es:'— Me llamo Lucía.', en:'My name is Lucía.'},{es:'— ¿Cómo te apellidas?', en:"What's your last name?"},{es:'— Me apellido Torres.', en:'My last name is Torres.'},{es:'— ¿Cómo se escribe tu nombre?', en:'How do you spell your first name?'},{es:'— Se escribe L-U-C-Í-A.', en:"It's spelled L-U-C-Í-A."},{es:'— ¿De dónde eres?', en:'Where are you from?'},{es:'— Soy de Italia.', en:"I'm from Italy."},{es:'— ¿Qué lenguas hablas?', en:'What languages do you speak?'},{es:'— Hablo italiano y un poco de alemán.', en:'I speak Italian and a little German.'},{es:'— ¿Cuántos años tienes?', en:'How old are you?'},{es:'— Tengo veintisiete años.', en:"I'm twenty-seven years old."},{es:'— ¿A qué te dedicas?', en:'What do you do?'},{es:'— Soy profesora.', en:"I'm a teacher."}];
+                        this.part3Lines = ['— Hi, what\'s your name?','— My name is Pablo.','— What\'s your last name?','— My last name is Sánchez.','— How do you spell your last name?','— It\'s spelled S-Á-N-C-H-E-Z.','— Where are you from?','— I\'m from Brazil.','— What languages do you speak?','— I speak Portuguese and a little Spanish.','— How old are you?','— I\'m twenty-two years old.','— What do you do?','— I\'m a doctor.','— And you, what\'s your name?','— My name is Lucía.','— What\'s your last name?','— My last name is Torres.','— How do you spell your first name?','— It\'s spelled L-U-C-Í-A.','— Where are you from?','— I\'m from Italy.','— What languages do you speak?','— I speak Italian and a little German.','— How old are you?','— I\'m twenty-seven years old.','— What do you do?','— I\'m a teacher.'];
                     } else if (id === 'd6') {
-                        this.part1Lines = ['— Buenos días, ¿cómo te llamas?', '— Me llamo Pedro.', '— ¿Cómo te apellidas?', '— Me apellido Hernández.', '— ¿Cómo se escribe tu nombre?', '— Se escribe P-E-D-R-O.', '— ¿De dónde eres?', '— Soy de Rusia.', '— ¿Qué lenguas hablas?', '— Hablo ruso y un poco de inglés.', '— ¿Cuántos años tienes?', '— Tengo cincuenta años.', '— ¿A qué te dedicas?', '— Soy maestro.', '— Y tú, ¿cómo te llamas?', '— Me llamo María.', '— ¿Cómo te apellidas?', '— Me apellido Vargas.', '— ¿Cómo se escribe tu apellido?', '— Se escribe V-A-R-G-A-S.', '— ¿De dónde eres?', '— Soy de Corea.', '— ¿Qué lenguas hablas?', '— Hablo coreano, español y un poco de japonés.', '— ¿Cuántos años tienes?', '— Tengo dieciocho años.', '— ¿A qué te dedicas?', '— Soy economista.'];
-                        this.part2Lines = [{es:'— Buenos días, ¿cómo te llamas?', en:"Good morning, what's your name?"}, {es:'— Me llamo Pedro.', en:'My name is Pedro.'}, {es:'— ¿Cómo te apellidas?', en:"What's your last name?"}, {es:'— Me apellido Hernández.', en:'My last name is Hernández.'}, {es:'— ¿Cómo se escribe tu nombre?', en:'How do you spell your first name?'}, {es:'— Se escribe P-E-D-R-O.', en:"It's spelled P-E-D-R-O."}, {es:'— ¿De dónde eres?', en:'Where are you from?'}, {es:'— Soy de Rusia.', en:"I'm from Russia."}, {es:'— ¿Qué lenguas hablas?', en:'What languages do you speak?'}, {es:'— Hablo ruso y un poco de inglés.', en:'I speak Russian and a little English.'}, {es:'— ¿Cuántos años tienes?', en:'How old are you?'}, {es:'— Tengo cincuenta años.', en:"I'm fifty years old."}, {es:'— ¿A qué te dedicas?', en:'What do you do?'}, {es:'— Soy maestro.', en:"I'm a teacher."}, {es:'— Y tú, ¿cómo te llamas?', en:"And you, what's your name?"}, {es:'— Me llamo María.', en:'My name is María.'}, {es:'— ¿Cómo te apellidas?', en:"What's your last name?"}, {es:'— Me apellido Vargas.', en:'My last name is Vargas.'}, {es:'— ¿Cómo se escribe tu apellido?', en:'How do you spell your last name?'}, {es:'— Se escribe V-A-R-G-A-S.', en:"It's spelled V-A-R-G-A-S."}, {es:'— ¿De dónde eres?', en:'Where are you from?'}, {es:'— Soy de Corea.', en:"I'm from Korea."}, {es:'— ¿Qué lenguas hablas?', en:'What languages do you speak?'}, {es:'— Hablo coreano, español y un poco de japonés.', en:'I speak Korean, Spanish and a little Japanese.'}, {es:'— ¿Cuántos años tienes?', en:'How old are you?'}, {es:'— Tengo dieciocho años.', en:"I'm eighteen years old."}, {es:'— ¿A qué te dedicas?', en:'What do you do?'}, {es:'— Soy economista.', en:"I'm an economist."}];
-                        this.part3Lines = ['— Good morning, what\'s your name?', '— My name is Pedro.', '— What\'s your last name?', '— My last name is Hernández.', '— How do you spell your first name?', '— It\'s spelled P-E-D-R-O.', '— Where are you from?', '— I\'m from Russia.', '— What languages do you speak?', '— I speak Russian and a little English.', '— How old are you?', '— I\'m fifty years old.', '— What do you do?', '— I\'m a teacher.', '— And you, what\'s your name?', '— My name is María.', '— What\'s your last name?', '— My last name is Vargas.', '— How do you spell your last name?', '— It\'s spelled V-A-R-G-A-S.', '— Where are you from?', '— I\'m from Korea.', '— What languages do you speak?', '— I speak Korean, Spanish and a little Japanese.', '— How old are you?', '— I\'m eighteen years old.', '— What do you do?', '— I\'m an economist.'];
+                        this.part1Lines = ['— Buenos días, ¿cómo te llamas?','— Me llamo Pedro.','— ¿Cómo te apellidas?','— Me apellido Hernández.','— ¿Cómo se escribe tu nombre?','— Se escribe P-E-D-R-O.','— ¿De dónde eres?','— Soy de Rusia.','— ¿Qué lenguas hablas?','— Hablo ruso y un poco de inglés.','— ¿Cuántos años tienes?','— Tengo cincuenta años.','— ¿A qué te dedicas?','— Soy maestro.','— Y tú, ¿cómo te llamas?','— Me llamo María.','— ¿Cómo te apellidas?','— Me apellido Vargas.','— ¿Cómo se escribe tu apellido?','— Se escribe V-A-R-G-A-S.','— ¿De dónde eres?','— Soy de Corea.','— ¿Qué lenguas hablas?','— Hablo coreano, español y un poco de japonés.','— ¿Cuántos años tienes?','— Tengo dieciocho años.','— ¿A qué te dedicas?','— Soy economista.'];
+                        this.part2Lines = [{es:'— Buenos días, ¿cómo te llamas?', en:"Good morning, what's your name?"},{es:'— Me llamo Pedro.', en:'My name is Pedro.'},{es:'— ¿Cómo te apellidas?', en:"What's your last name?"},{es:'— Me apellido Hernández.', en:'My last name is Hernández.'},{es:'— ¿Cómo se escribe tu nombre?', en:'How do you spell your first name?'},{es:'— Se escribe P-E-D-R-O.', en:"It's spelled P-E-D-R-O."},{es:'— ¿De dónde eres?', en:'Where are you from?'},{es:'— Soy de Rusia.', en:"I'm from Russia."},{es:'— ¿Qué lenguas hablas?', en:'What languages do you speak?'},{es:'— Hablo ruso y un poco de inglés.', en:'I speak Russian and a little English.'},{es:'— ¿Cuántos años tienes?', en:'How old are you?'},{es:'— Tengo cincuenta años.', en:"I'm fifty years old."},{es:'— ¿A qué te dedicas?', en:'What do you do?'},{es:'— Soy maestro.', en:"I'm a teacher."},{es:'— Y tú, ¿cómo te llamas?', en:"And you, what's your name?"},{es:'— Me llamo María.', en:'My name is María.'},{es:'— ¿Cómo te apellidas?', en:"What's your last name?"},{es:'— Me apellido Vargas.', en:'My last name is Vargas.'},{es:'— ¿Cómo se escribe tu apellido?', en:'How do you spell your last name?'},{es:'— Se escribe V-A-R-G-A-S.', en:"It's spelled V-A-R-G-A-S."},{es:'— ¿De dónde eres?', en:'Where are you from?'},{es:'— Soy de Corea.', en:"I'm from Korea."},{es:'— ¿Qué lenguas hablas?', en:'What languages do you speak?'},{es:'— Hablo coreano, español y un poco de japonés.', en:'I speak Korean, Spanish and a little Japanese.'},{es:'— ¿Cuántos años tienes?', en:'How old are you?'},{es:'— Tengo dieciocho años.', en:"I'm eighteen years old."},{es:'— ¿A qué te dedicas?', en:'What do you do?'},{es:'— Soy economista.', en:"I'm an economist."}];
+                        this.part3Lines = ['— Good morning, what\'s your name?','— My name is Pedro.','— What\'s your last name?','— My last name is Hernández.','— How do you spell your first name?','— It\'s spelled P-E-D-R-O.','— Where are you from?','— I\'m from Russia.','— What languages do you speak?','— I speak Russian and a little English.','— How old are you?','— I\'m fifty years old.','— What do you do?','— I\'m a teacher.','— And you, what\'s your name?','— My name is María.','— What\'s your last name?','— My last name is Vargas.','— How do you spell your last name?','— It\'s spelled V-A-R-G-A-S.','— Where are you from?','— I\'m from Korea.','— What languages do you speak?','— I speak Korean, Spanish and a little Japanese.','— How old are you?','— I\'m eighteen years old.','— What do you do?','— I\'m an economist.'];
                     } else if (id === 'd7') {
-                        this.part1Lines = ['— Hola, ¿cómo te llamas?', '— Me llamo Andrés.', '— ¿Cómo te apellidas?', '— Me apellido Flores.', '— ¿Cómo se escribe tu apellido?', '— Se escribe F-L-O-R-E-S.', '— ¿De dónde eres?', '— Soy de Estados Unidos.', '— ¿Qué lenguas hablas?', '— Hablo inglés y un poco de español.', '— ¿Cuántos años tienes?', '— Tengo cuarenta y nueve años.', '— ¿A qué te dedicas?', '— Soy profesor.', '— Y tú, ¿cómo te llamas?', '— Me llamo Beatriz.', '— ¿Cómo te apellidas?', '— Me apellido Ramos.', '— ¿Cómo se escribe tu nombre?', '— Se escribe B-E-A-T-R-I-Z.', '— ¿De dónde eres?', '— Soy de Suecia.', '— ¿Qué lenguas hablas?', '— Hablo sueco y un poco de francés.', '— ¿Cuántos años tienes?', '— Tengo treinta y ocho años.', '— ¿A qué te dedicas?', '— Soy doctora.'];
-                        this.part2Lines = [{es:'— Hola, ¿cómo te llamas?', en:"Hi, what's your name?"}, {es:'— Me llamo Andrés.', en:'My name is Andrés.'}, {es:'— ¿Cómo te apellidas?', en:"What's your last name?"}, {es:'— Me apellido Flores.', en:'My last name is Flores.'}, {es:'— ¿Cómo se escribe tu apellido?', en:'How do you spell your last name?'}, {es:'— Se escribe F-L-O-R-E-S.', en:"It's spelled F-L-O-R-E-S."}, {es:'— ¿De dónde eres?', en:'Where are you from?'}, {es:'— Soy de Estados Unidos.', en:"I'm from the United States."}, {es:'— ¿Qué lenguas hablas?', en:'What languages do you speak?'}, {es:'— Hablo inglés y un poco de español.', en:'I speak English and a little Spanish.'}, {es:'— ¿Cuántos años tienes?', en:'How old are you?'}, {es:'— Tengo cuarenta y nueve años.', en:"I'm forty-nine years old."}, {es:'— ¿A qué te dedicas?', en:'What do you do?'}, {es:'— Soy profesor.', en:"I'm a teacher."}, {es:'— Y tú, ¿cómo te llamas?', en:"And you, what's your name?"}, {es:'— Me llamo Beatriz.', en:'My name is Beatriz.'}, {es:'— ¿Cómo te apellidas?', en:"What's your last name?"}, {es:'— Me apellido Ramos.', en:'My last name is Ramos.'}, {es:'— ¿Cómo se escribe tu nombre?', en:'How do you spell your first name?'}, {es:'— Se escribe B-E-A-T-R-I-Z.', en:"It's spelled B-E-A-T-R-I-Z."}, {es:'— ¿De dónde eres?', en:'Where are you from?'}, {es:'— Soy de Suecia.', en:"I'm from Sweden."}, {es:'— ¿Qué lenguas hablas?', en:'What languages do you speak?'}, {es:'— Hablo sueco y un poco de francés.', en:'I speak Swedish and a little French.'}, {es:'— ¿Cuántos años tienes?', en:'How old are you?'}, {es:'— Tengo treinta y ocho años.', en:"I'm thirty-eight years old."}, {es:'— ¿A qué te dedicas?', en:'What do you do?'}, {es:'— Soy doctora.', en:"I'm a doctor."}];
-                        this.part3Lines = ['— Hi, what\'s your name?', '— My name is Andrés.', '— What\'s your last name?', '— My last name is Flores.', '— How do you spell your last name?', '— It\'s spelled F-L-O-R-E-S.', '— Where are you from?', '— I\'m from the United States.', '— What languages do you speak?', '— I speak English and a little Spanish.', '— How old are you?', '— I\'m forty-nine years old.', '— What do you do?', '— I\'m a teacher.', '— And you, what\'s your name?', '— My name is Beatriz.', '— What\'s your last name?', '— My last name is Ramos.', '— How do you spell your first name?', '— It\'s spelled B-E-A-T-R-I-Z.', '— Where are you from?', '— I\'m from Sweden.', '— What languages do you speak?', '— I speak Swedish and a little French.', '— How old are you?', '— I\'m thirty-eight years old.', '— What do you do?', '— I\'m a doctor.'];
+                        this.part1Lines = ['— Hola, ¿cómo te llamas?','— Me llamo Andrés.','— ¿Cómo te apellidas?','— Me apellido Flores.','— ¿Cómo se escribe tu apellido?','— Se escribe F-L-O-R-E-S.','— ¿De dónde eres?','— Soy de Estados Unidos.','— ¿Qué lenguas hablas?','— Hablo inglés y un poco de español.','— ¿Cuántos años tienes?','— Tengo cuarenta y nueve años.','— ¿A qué te dedicas?','— Soy profesor.','— Y tú, ¿cómo te llamas?','— Me llamo Beatriz.','— ¿Cómo te apellidas?','— Me apellido Ramos.','— ¿Cómo se escribe tu nombre?','— Se escribe B-E-A-T-R-I-Z.','— ¿De dónde eres?','— Soy de Suecia.','— ¿Qué lenguas hablas?','— Hablo sueco y un poco de francés.','— ¿Cuántos años tienes?','— Tengo treinta y ocho años.','— ¿A qué te dedicas?','— Soy doctora.'];
+                        this.part2Lines = [{es:'— Hola, ¿cómo te llamas?', en:"Hi, what's your name?"},{es:'— Me llamo Andrés.', en:'My name is Andrés.'},{es:'— ¿Cómo te apellidas?', en:"What's your last name?"},{es:'— Me apellido Flores.', en:'My last name is Flores.'},{es:'— ¿Cómo se escribe tu apellido?', en:'How do you spell your last name?'},{es:'— Se escribe F-L-O-R-E-S.', en:"It's spelled F-L-O-R-E-S."},{es:'— ¿De dónde eres?', en:'Where are you from?'},{es:'— Soy de Estados Unidos.', en:"I'm from the United States."},{es:'— ¿Qué lenguas hablas?', en:'What languages do you speak?'},{es:'— Hablo inglés y un poco de español.', en:'I speak English and a little Spanish.'},{es:'— ¿Cuántos años tienes?', en:'How old are you?'},{es:'— Tengo cuarenta y nueve años.', en:"I'm forty-nine years old."},{es:'— ¿A qué te dedicas?', en:'What do you do?'},{es:'— Soy profesor.', en:"I'm a teacher."},{es:'— Y tú, ¿cómo te llamas?', en:"And you, what's your name?"},{es:'— Me llamo Beatriz.', en:'My name is Beatriz.'},{es:'— ¿Cómo te apellidas?', en:"What's your last name?"},{es:'— Me apellido Ramos.', en:'My last name is Ramos.'},{es:'— ¿Cómo se escribe tu nombre?', en:'How do you spell your first name?'},{es:'— Se escribe B-E-A-T-R-I-Z.', en:"It's spelled B-E-A-T-R-I-Z."},{es:'— ¿De dónde eres?', en:'Where are you from?'},{es:'— Soy de Suecia.', en:"I'm from Sweden."},{es:'— ¿Qué lenguas hablas?', en:'What languages do you speak?'},{es:'— Hablo sueco y un poco de francés.', en:'I speak Swedish and a little French.'},{es:'— ¿Cuántos años tienes?', en:'How old are you?'},{es:'— Tengo treinta y ocho años.', en:"I'm thirty-eight years old."},{es:'— ¿A qué te dedicas?', en:'What do you do?'},{es:'— Soy doctora.', en:"I'm a doctor."}];
+                        this.part3Lines = ['— Hi, what\'s your name?','— My name is Andrés.','— What\'s your last name?','— My last name is Flores.','— How do you spell your last name?','— It\'s spelled F-L-O-R-E-S.','— Where are you from?','— I\'m from the United States.','— What languages do you speak?','— I speak English and a little Spanish.','— How old are you?','— I\'m forty-nine years old.','— What do you do?','— I\'m a teacher.','— And you, what\'s your name?','— My name is Beatriz.','— What\'s your last name?','— My last name is Ramos.','— How do you spell your first name?','— It\'s spelled B-E-A-T-R-I-Z.','— Where are you from?','— I\'m from Sweden.','— What languages do you speak?','— I speak Swedish and a little French.','— How old are you?','— I\'m thirty-eight years old.','— What do you do?','— I\'m a doctor.'];
                     }
                     this.totalLines = this.part1Lines.length;
                 }
@@ -925,10 +606,7 @@
                                     <div class="progress-bar-track"><div class="progress-bar-fill" style="width:0%;"></div></div>
                                     <div class="time-display"><span class="time-current">0:00</span> <span class="time-duration">0:00</span></div>
                                 </div>
-                                <div class="volume-control">
-                                    <button class="volume-icon">🔊</button>
-                                    <input type="range" class="volume-slider" min="0" max="1" step="0.05" value="0.8">
-                                </div>
+                                <div class="volume-control"><button class="volume-icon">🔊</button><input type="range" class="volume-slider" min="0" max="1" step="0.05" value="0.8"></div>
                                 <button class="speed-btn">1×</button>
                             </div>
                         </div>
@@ -940,30 +618,24 @@
                         <div class="lyrics-container"><div class="lyrics-content"></div></div>
                         <audio preload="metadata"><source src="${this.config.audioSrc}" type="audio/mpeg"></audio>
                     `;
-                    // 获取元素
-                    const card = this.container.querySelector('.player-card');
-                    this.btnPlayMain = card.querySelector('.btn-play');
-                    this.iconPlay = card.querySelector('.icon-play');
-                    this.iconPause = card.querySelector('.icon-pause');
-                    this.progressFillMain = card.querySelector('.progress-bar-fill');
-                    this.timeCurrent = card.querySelector('.time-current');
-                    this.timeDuration = card.querySelector('.time-duration');
-                    this.volumeSlider = card.querySelector('.volume-slider');
-                    this.btnVolume = card.querySelector('.volume-icon');
-                    this.btnSpeed = card.querySelector('.speed-btn');
+                    this.btnPlayMain = this.container.querySelector('.btn-play');
+                    this.iconPlay = this.container.querySelector('.icon-play');
+                    this.iconPause = this.container.querySelector('.icon-pause');
+                    this.progressFillMain = this.container.querySelector('.progress-bar-fill');
+                    this.timeCurrent = this.container.querySelector('.time-current');
+                    this.timeDuration = this.container.querySelector('.time-duration');
+                    this.volumeSlider = this.container.querySelector('.volume-slider');
+                    this.btnVolume = this.container.querySelector('.volume-icon');
+                    this.btnSpeed = this.container.querySelector('.speed-btn');
                     this.lyricsContent = this.container.querySelector('.lyrics-content');
                     this.lyricsContainer = this.container.querySelector('.lyrics-container');
                     this.tabBtns = this.container.querySelectorAll('.tab-btn');
-                    this.playerCard = card;
                     this.audio = this.container.querySelector('audio');
                 }
 
                 bindEvents() {
                     this.audio.volume = parseFloat(this.volumeSlider.value);
-                    this.volumeSlider.addEventListener('input', () => {
-                        this.audio.volume = parseFloat(this.volumeSlider.value);
-                        this.updateVolumeIcon();
-                    });
+                    this.volumeSlider.addEventListener('input', () => { this.audio.volume = this.volumeSlider.value; this.updateVolumeIcon(); });
                     this.btnVolume.addEventListener('click', () => this.toggleMute());
                     this.btnSpeed.addEventListener('click', () => {
                         const speeds = [0.75,1,1.25,1.5,2];
@@ -974,19 +646,16 @@
                         this.btnSpeed.textContent = this.playbackRate+'×';
                     });
                     this.btnPlayMain.addEventListener('click', () => this.togglePlay());
-                    // 进度条事件
-                    this.progressFillMain.parentNode.addEventListener('mousedown', (e) => this.startDrag(e, 'main'));
-                    this.progressFillMain.parentNode.addEventListener('touchstart', (e) => this.startDrag(e, 'main'), {passive: false});
-                    document.addEventListener('mousemove', (e) => this.moveDrag(e));
-                    document.addEventListener('touchmove', (e) => this.moveDrag(e), {passive: false});
-                    document.addEventListener('mouseup', () => this.endDrag());
-                    document.addEventListener('touchend', () => this.endDrag());
-                    // 音频事件
+                    this.progressFillMain.parentNode.addEventListener('mousedown', e => this.startDrag(e));
+                    this.progressFillMain.parentNode.addEventListener('touchstart', e => this.startDrag(e));
+                    document.addEventListener('mousemove', e => this.moveDrag(e));
+                    document.addEventListener('touchmove', e => this.moveDrag(e));
+                    document.addEventListener('mouseup', () => this.dragging=false);
+                    document.addEventListener('touchend', () => this.dragging=false);
                     this.audio.addEventListener('timeupdate', () => this.onTimeUpdate());
                     this.audio.addEventListener('ended', () => this.setIsPlaying(false));
                     this.audio.addEventListener('play', () => this.setIsPlaying(true));
                     this.audio.addEventListener('pause', () => this.setIsPlaying(false));
-                    // 标签切换
                     this.tabBtns.forEach(btn => {
                         btn.addEventListener('click', () => {
                             const tab = btn.dataset.tab;
@@ -1001,27 +670,19 @@
 
                 calculateTimestamps() {
                     const dur = this.audio.duration;
-                    if (!dur || dur <= 0 || !isFinite(dur)) {
-                        this.timestamps = this.part1Lines.map((_, i) => i * (140 / this.totalLines));
-                        return;
-                    }
-                    this.audioDuration = dur;
-                    this.timestamps = this.part1Lines.map((_, i) => i * (dur / this.totalLines));
+                    this.timestamps = this.part1Lines.map((_, i) => i * ((dur && isFinite(dur) && dur > 0 ? dur : 140) / this.totalLines));
+                    if (dur && isFinite(dur) && dur > 0) this.audioDuration = dur;
+                    else this.audioDuration = 140;
                 }
 
                 updateDurationDisplay() {
-                    const dur = this.audio.duration;
-                    if (dur && isFinite(dur)) {
-                        this.audioDuration = dur;
-                        this.timeDuration.textContent = this.formatTime(dur);
+                    if (this.audio.duration && isFinite(this.audio.duration)) {
+                        this.audioDuration = this.audio.duration;
+                        this.timeDuration.textContent = this.formatTime(this.audioDuration);
                     }
                 }
 
-                formatTime(s) {
-                    if (!isFinite(s) || s < 0) return '0:00';
-                    const m = Math.floor(s/60), sec = Math.floor(s%60);
-                    return m + ':' + (sec < 10 ? '0' : '') + sec;
-                }
+                formatTime(s) { const m = Math.floor(s/60), sec = Math.floor(s%60); return m + ':' + (sec<10?'0':'') + sec; }
 
                 renderLyrics(tab) {
                     this.lyricsContent.innerHTML = '';
@@ -1041,7 +702,7 @@
                         line.addEventListener('click', () => {
                             if (this.audioDuration > 0) {
                                 this.audio.currentTime = this.timestamps[d.index] || 0;
-                                if (!this.isPlaying) this.playAudio();
+                                if (!this.isPlaying) this.audio.play().catch(()=>{});
                                 this.setActiveLine(d.index);
                             }
                         });
@@ -1057,24 +718,19 @@
                     const el = this.lyricsContent.querySelector(`[data-index="${idx}"]`);
                     if (el) {
                         el.classList.add('active');
-                        this.lyricsContent.querySelectorAll('.lyric-line').forEach(l => {
-                            if (parseInt(l.dataset.index) < idx) l.classList.add('played');
-                        });
+                        this.lyricsContent.querySelectorAll('.lyric-line').forEach(l => { if (parseInt(l.dataset.index) < idx) l.classList.add('played'); });
                     }
                 }
 
-                togglePlay() {
-                    if (this.isPlaying) this.audio.pause();
-                    else this.audio.play().catch(() => {});
-                }
+                togglePlay() { this.isPlaying ? this.audio.pause() : this.audio.play().catch(()=>{}); }
                 setIsPlaying(state) {
                     this.isPlaying = state;
                     this.iconPlay.style.display = state ? 'none' : '';
                     this.iconPause.style.display = state ? '' : 'none';
-                    // 同步浮动按钮图标
                     fpIconPlay.style.display = state ? 'none' : '';
                     fpIconPause.style.display = state ? '' : 'none';
                 }
+
                 updateFloatDisplay() {
                     if (this.currentActiveIndex >= 0) {
                         let text = this.currentTab === 'part1' ? this.part1Lines[this.currentActiveIndex] : (this.currentTab === 'part2' ? this.part2Lines[this.currentActiveIndex].es : this.part3Lines[this.currentActiveIndex]);
@@ -1083,96 +739,84 @@
                     } else fpCurrentText.textContent = '— 准备播放';
                     if (this.audioDuration) fpTime.textContent = this.formatTime(this.audio.currentTime) + ' / ' + this.formatTime(this.audioDuration);
                 }
+
                 onTimeUpdate() {
                     if (this.dragging) return;
-                    const ct = this.audio.currentTime;
-                    const dur = this.audio.duration;
+                    const ct = this.audio.currentTime, dur = this.audio.duration;
                     if (dur) {
                         const pct = (ct/dur)*100;
                         this.progressFillMain.style.width = pct+'%';
                         this.timeCurrent.textContent = this.formatTime(ct);
                         fpProgressFill.style.width = pct+'%';
                         const idx = this.timestamps.findIndex((t,i) => t <= ct && (i===this.totalLines-1 || this.timestamps[i+1] > ct));
-                        if (idx !== -1 && idx !== this.currentActiveIndex) {
-                            this.setActiveLine(idx);
-                            this.scrollToLine(idx);
-                        }
+                        if (idx !== -1 && idx !== this.currentActiveIndex) this.setActiveLine(idx);
                         this.updateFloatDisplay();
                     }
                 }
-                scrollToLine(idx) {
-                    const el = this.lyricsContent.querySelector(`[data-index="${idx}"]`);
-                    if (el) el.scrollIntoView({behavior:'smooth', block:'center'});
-                }
-                // 进度条拖动
-                startDrag(e, src) {
-                    e.preventDefault();
-                    this.dragging = true;
-                    const rect = e.target.getBoundingClientRect();
-                    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
-                    const ratio = Math.max(0, Math.min(1, (clientX - rect.left) / rect.width));
-                    this.audio.currentTime = ratio * this.audioDuration;
-                }
-                moveDrag(e) {
-                    if (!this.dragging) return;
-                    const track = this.progressFillMain.parentNode;
-                    const rect = track.getBoundingClientRect();
-                    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
-                    const ratio = Math.max(0, Math.min(1, (clientX - rect.left) / rect.width));
-                    this.audio.currentTime = ratio * this.audioDuration;
-                }
-                endDrag() { this.dragging = false; }
+
+                startDrag(e) { e.preventDefault(); this.dragging = true; const rect = e.target.getBoundingClientRect(); const cx = e.touches ? e.touches[0].clientX : e.clientX; const ratio = Math.min(1, Math.max(0, (cx - rect.left) / rect.width)); this.audio.currentTime = ratio * this.audioDuration; }
+                moveDrag(e) { if (!this.dragging) return; const rect = this.progressFillMain.parentNode.getBoundingClientRect(); const cx = e.touches ? e.touches[0].clientX : e.clientX; const ratio = Math.min(1, Math.max(0, (cx - rect.left) / rect.width)); this.audio.currentTime = ratio * this.audioDuration; }
                 toggleMute() {
-                    if (this.isMuted) {
-                        this.isMuted = false;
-                        this.audio.volume = this.previousVolume;
-                        this.volumeSlider.value = this.previousVolume;
-                    } else {
-                        this.isMuted = true;
-                        this.previousVolume = this.audio.volume;
-                        this.audio.volume = 0;
-                        this.volumeSlider.value = 0;
-                    }
+                    if (this.isMuted) { this.isMuted = false; this.audio.volume = this.previousVolume; this.volumeSlider.value = this.previousVolume; }
+                    else { this.isMuted = true; this.previousVolume = this.audio.volume; this.audio.volume = 0; this.volumeSlider.value = 0; }
                     this.updateVolumeIcon();
                 }
                 updateVolumeIcon() {
                     const v = this.audio.volume;
-                    let icon = v === 0 ? '🔇' : (v < 0.35 ? '🔈' : (v < 0.7 ? '🔉' : '🔊'));
+                    let icon = v===0?'🔇':(v<0.35?'🔈':(v<0.7?'🔉':'🔊'));
                     this.btnVolume.textContent = icon;
-                    // 同步浮动按钮图标
                     fpBtnVolume.textContent = icon;
                 }
                 bindFloatProgress(track) {
-                    track.addEventListener('mousedown', (e) => this.startDrag(e, 'float'));
-                    track.addEventListener('touchstart', (e) => this.startDrag(e, 'float'), {passive: false});
+                    track.addEventListener('mousedown', e => this.startDrag(e));
+                    track.addEventListener('touchstart', e => this.startDrag(e));
                 }
             }
 
-            // 数字课程类
+            // ----- 数字课程类 (使用您修改后的 palabraDurations) -----
             class NumerosCourse {
                 constructor(container, config) {
                     this.container = container;
                     this.config = config;
                     this.audio = null;
                     this.isPlaying = false;
-                    // 数字数据与逐词时长 (您已修改的数组)
-                    this.palabraDurations = [1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.5,1.0,1.0,1.0,1.5,1.5,1.5,1.0,1.0,1.0,2.1,1.5,1.5,1.5,1.5,1.5,2.0,1.0,1.0,1.0,2.1,1.5,1.5,1.5,1.5,1.5,2.0,1.0,1.0,1.0,2.1,1.5,1.5,1.5,1.5,1.5,2.0,1.0,1.0,1.0,2.4,1.8,1.6,1.5,1.6,1.5,2.0,1.2,1.2,1.2,2.4,1.8,1.6,1.5,1.6,1.5,2.0,1.2,1.2,1.2,2.4,1.8,1.6,1.5,1.6,1.5,2.0,1.2,1.2,1.2,2.4,1.8,1.6,1.5,1.6,1.5,2.0,1.2,1.2,1.2,2.4,1.8,1.6,1.5,1.6,1.5,2.0,1.0];
+                    this.isMuted = false;
+                    this.previousVolume = 0.8;
+                    this.playbackRate = 1;
+                    this.audioDuration = 0;
+                    this.timestamps = [];
+                    this.currentActiveIndex = -1;
+                    this.dragging = false;
+                    // 🔧 您精确修改的逐词时长数组
+                    this.palabraDurations = [
+                        1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0,
+                        1.0, 1.0, 1.0, 1.5, 1.0, 1.0, 1.0, 1.5, 1.5, 1.5,
+                        1.0, 1.0, 1.0, 2.1, 1.5, 1.5, 1.5, 1.5, 1.5, 2.0,
+                        1.0, 1.0, 1.0, 2.1, 1.5, 1.5, 1.5, 1.5, 1.5, 2.0,
+                        1.0, 1.0, 1.0, 2.1, 1.5, 1.5, 1.5, 1.5, 1.5, 2.0,
+                        1.0, 1.0, 1.0, 2.4, 1.8, 1.6, 1.5, 1.6, 1.5, 2.0,
+                        1.2, 1.2, 1.2, 2.4, 1.8, 1.6, 1.5, 1.6, 1.5, 2.0,
+                        1.2, 1.2, 1.2, 2.4, 1.8, 1.6, 1.5, 1.6, 1.5, 2.0,
+                        1.2, 1.2, 1.2, 2.4, 1.8, 1.6, 1.5, 1.6, 1.5, 2.0,
+                        1.2, 1.2, 1.2, 2.4, 1.8, 1.6, 1.5, 1.6, 1.5, 2.0,
+                        1.0
+                    ];
                     this.PAUSA = 1.0;
                     this.numeros = ["cero","uno","dos","tres","cuatro","cinco","seis","siete","ocho","nueve","diez","once","doce","trece","catorce","quince","dieciséis","diecisiete","dieciocho","diecinueve","veinte","veintiuno","veintidós","veintitrés","veinticuatro","veinticinco","veintiséis","veintisiete","veintiocho","veintinueve","treinta","treinta y uno","treinta y dos","treinta y tres","treinta y cuatro","treinta y cinco","treinta y seis","treinta y siete","treinta y ocho","treinta y nueve","cuarenta","cuarenta y uno","cuarenta y dos","cuarenta y tres","cuarenta y cuatro","cuarenta y cinco","cuarenta y seis","cuarenta y siete","cuarenta y ocho","cuarenta y nueve","cincuenta","cincuenta y uno","cincuenta y dos","cincuenta y tres","cincuenta y cuatro","cincuenta y cinco","cincuenta y seis","cincuenta y siete","cincuenta y ocho","cincuenta y nueve","sesenta","sesenta y uno","sesenta y dos","sesenta y tres","sesenta y cuatro","sesenta y cinco","sesenta y seis","sesenta y siete","sesenta y ocho","sesenta y nueve","setenta","setenta y uno","setenta y dos","setenta y tres","setenta y cuatro","setenta y cinco","setenta y seis","setenta y siete","setenta y ocho","setenta y nueve","ochenta","ochenta y uno","ochenta y dos","ochenta y tres","ochenta y cuatro","ochenta y cinco","ochenta y seis","ochenta y siete","ochenta y ocho","ochenta y nueve","noventa","noventa y uno","noventa y dos","noventa y tres","noventa y cuatro","noventa y cinco","noventa y seis","noventa y siete","noventa y ocho","noventa y nueve","cien"];
                     this.totalLines = this.numeros.length;
-                    this.timestamps = [];
-                    this.currentActiveIndex = -1;
                     this.init();
                 }
+
                 init() {
                     this.buildHTML();
                     this.audio = this.container.querySelector('audio');
                     this.bindEvents();
-                    this.audio.load();
                     this.audio.addEventListener('loadedmetadata', () => this.updateDuration());
                     if (this.audio.readyState >= 1) this.updateDuration();
+                    this.generateTimestamps();
                     this.renderNumeros();
                 }
+
                 buildHTML() {
                     this.container.innerHTML = `
                         <div class="player-card">
@@ -1183,37 +827,34 @@
                                     <div class="progress-bar-track"><div class="progress-bar-fill" style="width:0%;"></div></div>
                                     <div class="time-display"><span class="time-current">0:00</span> <span class="time-duration">0:00</span></div>
                                 </div>
-                                <div class="volume-control">
-                                    <button class="volume-icon">🔊</button>
-                                    <input type="range" class="volume-slider" min="0" max="1" step="0.05" value="0.8">
-                                </div>
+                                <div class="volume-control"><button class="volume-icon">🔊</button><input type="range" class="volume-slider" min="0" max="1" step="0.05" value="0.8"></div>
                                 <button class="speed-btn">1×</button>
                             </div>
                         </div>
                         <div class="lyrics-container"><div class="lyrics-content"></div></div>
                         <audio preload="metadata"><source src="${this.config.audioSrc}" type="audio/mpeg"></audio>
                     `;
-                    const card = this.container.querySelector('.player-card');
-                    this.btnPlay = card.querySelector('.btn-play');
-                    this.iconPlay = card.querySelector('.icon-play');
-                    this.iconPause = card.querySelector('.icon-pause');
-                    this.progressFill = card.querySelector('.progress-bar-fill');
-                    this.timeCurrent = card.querySelector('.time-current');
-                    this.timeDuration = card.querySelector('.time-duration');
-                    this.volumeSlider = card.querySelector('.volume-slider');
-                    this.btnVolume = card.querySelector('.volume-icon');
-                    this.btnSpeed = card.querySelector('.speed-btn');
+                    this.btnPlay = this.container.querySelector('.btn-play');
+                    this.iconPlay = this.container.querySelector('.icon-play');
+                    this.iconPause = this.container.querySelector('.icon-pause');
+                    this.progressFill = this.container.querySelector('.progress-bar-fill');
+                    this.timeCurrent = this.container.querySelector('.time-current');
+                    this.timeDuration = this.container.querySelector('.time-duration');
+                    this.volumeSlider = this.container.querySelector('.volume-slider');
+                    this.btnVolume = this.container.querySelector('.volume-icon');
+                    this.btnSpeed = this.container.querySelector('.speed-btn');
                     this.lyricsContent = this.container.querySelector('.lyrics-content');
-                    this.playerCard = card;
                 }
+
                 generateTimestamps() {
                     let acum = 0;
-                    this.timestamps = this.palabraDurations.map((d,i) => {
+                    this.timestamps = this.palabraDurations.map((d, i) => {
                         const t = acum;
                         acum += d + this.PAUSA;
                         return t;
                     });
                 }
+
                 updateDuration() {
                     if (this.audio.duration && isFinite(this.audio.duration)) {
                         this.audioDuration = this.audio.duration;
@@ -1222,14 +863,16 @@
                     }
                     this.timeDuration.textContent = this.formatTime(this.audioDuration);
                 }
+
                 formatTime(s) { const m = Math.floor(s/60), sec = Math.floor(s%60); return m + ':' + (sec<10?'0':'') + sec; }
+
                 bindEvents() {
                     this.audio.volume = parseFloat(this.volumeSlider.value);
                     this.volumeSlider.addEventListener('input', () => { this.audio.volume = this.volumeSlider.value; this.updateVolumeIcon(); });
                     this.btnVolume.addEventListener('click', () => this.toggleMute());
                     this.btnSpeed.addEventListener('click', () => {
                         const speeds = [0.75,1,1.25,1.5,2];
-                        let idx = speeds.indexOf(this.playbackRate||1);
+                        let idx = speeds.indexOf(this.playbackRate);
                         idx = (idx+1)%speeds.length;
                         this.playbackRate = speeds[idx];
                         this.audio.playbackRate = this.playbackRate;
@@ -1237,18 +880,18 @@
                     });
                     this.btnPlay.addEventListener('click', () => this.togglePlay());
                     this.progressFill.parentNode.addEventListener('mousedown', e => this.startDrag(e));
-                    this.progressFill.parentNode.addEventListener('touchstart', e => this.startDrag(e), {passive:false});
+                    this.progressFill.parentNode.addEventListener('touchstart', e => this.startDrag(e));
                     document.addEventListener('mousemove', e => this.moveDrag(e));
-                    document.addEventListener('touchmove', e => this.moveDrag(e), {passive:false});
+                    document.addEventListener('touchmove', e => this.moveDrag(e));
                     document.addEventListener('mouseup', () => this.dragging=false);
                     document.addEventListener('touchend', () => this.dragging=false);
                     this.audio.addEventListener('timeupdate', () => this.onTimeUpdate());
                     this.audio.addEventListener('ended', () => this.setIsPlaying(false));
+                    this.audio.addEventListener('play', () => this.setIsPlaying(true));
+                    this.audio.addEventListener('pause', () => this.setIsPlaying(false));
                 }
-                togglePlay() {
-                    if (this.isPlaying) this.audio.pause();
-                    else this.audio.play().catch(()=>{});
-                }
+
+                togglePlay() { this.isPlaying ? this.audio.pause() : this.audio.play().catch(()=>{}); }
                 setIsPlaying(state) {
                     this.isPlaying = state;
                     this.iconPlay.style.display = state ? 'none' : '';
@@ -1256,6 +899,7 @@
                     fpIconPlay.style.display = state ? 'none' : '';
                     fpIconPause.style.display = state ? '' : 'none';
                 }
+
                 onTimeUpdate() {
                     if (this.dragging) return;
                     const ct = this.audio.currentTime, dur = this.audio.duration;
@@ -1265,26 +909,27 @@
                         this.timeCurrent.textContent = this.formatTime(ct);
                         fpProgressFill.style.width = pct+'%';
                         const idx = this.timestamps.findIndex((t,i) => t <= ct && (i===this.totalLines-1 || this.timestamps[i+1] > ct));
-                        if (idx !== -1 && idx !== this.currentActiveIndex) {
-                            this.setActiveLine(idx);
-                        }
+                        if (idx !== -1 && idx !== this.currentActiveIndex) this.setActiveLine(idx);
                         this.updateFloatDisplay();
                     }
                 }
+
                 setActiveLine(idx) {
                     this.lyricsContent.querySelectorAll('.lyric-line').forEach(l => l.classList.remove('active','played'));
-                    if (idx < 0) return;
+                    if (idx < 0 || idx >= this.totalLines) return;
                     this.currentActiveIndex = idx;
                     const el = this.lyricsContent.querySelector(`[data-index="${idx}"]`);
                     if (el) {
                         el.classList.add('active');
+                        this.lyricsContent.querySelectorAll('.lyric-line').forEach(l => { if (parseInt(l.dataset.index) < idx) l.classList.add('played'); });
                         el.scrollIntoView({behavior:'smooth', block:'center'});
                     }
                 }
+
                 renderNumeros() {
                     this.generateTimestamps();
                     this.lyricsContent.innerHTML = '';
-                    this.numeros.forEach((num,i) => {
+                    this.numeros.forEach((num, i) => {
                         const line = document.createElement('div');
                         line.className = 'lyric-line';
                         line.dataset.index = i;
@@ -1299,32 +944,18 @@
                         this.lyricsContent.appendChild(line);
                     });
                 }
+
                 updateFloatDisplay() {
                     if (this.currentActiveIndex >= 0) fpCurrentText.textContent = this.numeros[this.currentActiveIndex];
                     else fpCurrentText.textContent = '— 准备播放';
                     if (this.audioDuration) fpTime.textContent = this.formatTime(this.audio.currentTime) + ' / ' + this.formatTime(this.audioDuration);
                 }
-                startDrag(e) {
-                    e.preventDefault();
-                    this.dragging = true;
-                    const rect = this.progressFill.parentNode.getBoundingClientRect();
-                    const cx = e.touches ? e.touches[0].clientX : e.clientX;
-                    const ratio = Math.max(0,Math.min(1,(cx-rect.left)/rect.width));
-                    this.audio.currentTime = ratio * this.audioDuration;
-                }
-                moveDrag(e) {
-                    if (!this.dragging) return;
-                    const rect = this.progressFill.parentNode.getBoundingClientRect();
-                    const cx = e.touches ? e.touches[0].clientX : e.clientX;
-                    const ratio = Math.max(0,Math.min(1,(cx-rect.left)/rect.width));
-                    this.audio.currentTime = ratio * this.audioDuration;
-                }
+
+                startDrag(e) { e.preventDefault(); this.dragging = true; const rect = this.progressFill.parentNode.getBoundingClientRect(); const cx = e.touches ? e.touches[0].clientX : e.clientX; const ratio = Math.min(1, Math.max(0, (cx - rect.left) / rect.width)); this.audio.currentTime = ratio * this.audioDuration; }
+                moveDrag(e) { if (!this.dragging) return; const rect = this.progressFill.parentNode.getBoundingClientRect(); const cx = e.touches ? e.touches[0].clientX : e.clientX; const ratio = Math.min(1, Math.max(0, (cx - rect.left) / rect.width)); this.audio.currentTime = ratio * this.audioDuration; }
                 toggleMute() {
-                    if (this.isMuted) {
-                        this.isMuted = false; this.audio.volume = this.previousVolume; this.volumeSlider.value = this.previousVolume;
-                    } else {
-                        this.isMuted = true; this.previousVolume = this.audio.volume; this.audio.volume = 0; this.volumeSlider.value = 0;
-                    }
+                    if (this.isMuted) { this.isMuted = false; this.audio.volume = this.previousVolume; this.volumeSlider.value = this.previousVolume; }
+                    else { this.isMuted = true; this.previousVolume = this.audio.volume; this.audio.volume = 0; this.volumeSlider.value = 0; }
                     this.updateVolumeIcon();
                 }
                 updateVolumeIcon() {
@@ -1335,35 +966,30 @@
                 }
                 bindFloatProgress(track) {
                     track.addEventListener('mousedown', e => this.startDrag(e));
-                    track.addEventListener('touchstart', e => this.startDrag(e), {passive:false});
+                    track.addEventListener('touchstart', e => this.startDrag(e));
                 }
             }
 
-            // 启动
+            // 初始化所有课程
+            function initAllCourses() {
+                courseConfigs.forEach(config => {
+                    const container = document.getElementById(`course-${config.id}`);
+                    if (config.type === 'numeros') courses[config.id] = new NumerosCourse(container, config);
+                    else courses[config.id] = new DialogCourse(container, config);
+                });
+                activeCourseInstance = courses['d1'];
+                activeAudio = activeCourseInstance.audio;
+                bindFloatPlayerToAudio(activeAudio, activeCourseInstance);
+            }
+
             initAllCourses();
 
-            // 课程标签切换
             document.querySelectorAll('.course-tab-btn').forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const courseId = btn.dataset.course;
-                    switchCourse(courseId);
-                });
+                btn.addEventListener('click', () => switchCourse(btn.dataset.course));
             });
 
-            // 浮动播放器进度条事件绑定到当前课程
-            fpProgressTrack.addEventListener('mousedown', (e) => {
-                if (activeCourseInstance && activeCourseInstance.startDrag) {
-                    activeCourseInstance.startDrag(e);
-                }
-            });
-            fpProgressTrack.addEventListener('touchstart', (e) => {
-                if (activeCourseInstance && activeCourseInstance.startDrag) {
-                    activeCourseInstance.startDrag(e);
-                }
-            }, {passive: false});
-
-            // 初始绑定
-            bindFloatPlayerToAudio(courses['d1'].audio, courses['d1']);
+            fpProgressTrack.addEventListener('mousedown', e => { if (activeCourseInstance && activeCourseInstance.startDrag) activeCourseInstance.startDrag(e); });
+            fpProgressTrack.addEventListener('touchstart', e => { if (activeCourseInstance && activeCourseInstance.startDrag) activeCourseInstance.startDrag(e); }, {passive: false});
         })();
     </script>
 </body>
