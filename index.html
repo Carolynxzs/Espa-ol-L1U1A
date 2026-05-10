@@ -507,23 +507,16 @@
                 document.getElementById('current-course-badge').textContent = config.label;
                 document.getElementById('current-course-title').textContent = config.title;
                 document.querySelectorAll('.course-tab-btn').forEach(btn => btn.classList.remove('active'));
-                function bindFloatPlayerToAudio(audio, instance) {
-    // 安全处理浮动播放按钮：如果按钮不在页面中就跳过，避免报错
+               function bindFloatPlayerToAudio(audio, instance) {
     if (fpBtnPlay && fpBtnPlay.parentNode) {
         const newFpBtn = fpBtnPlay.cloneNode(true);
         fpBtnPlay.parentNode.replaceChild(newFpBtn, fpBtnPlay);
         newFpBtn.addEventListener('click', () => instance.togglePlay());
-    } else {
-        console.warn('fpBtnPlay 不在DOM中，跳过按钮绑定');
     }
-
-    // 安全处理进度条
     if (fpProgressTrack && fpProgressTrack.parentNode) {
         const newFpTrack = fpProgressTrack.cloneNode(true);
         fpProgressTrack.parentNode.replaceChild(newFpTrack, fpProgressTrack);
         if (instance.bindFloatProgress) instance.bindFloatProgress(newFpTrack);
-    } else {
-        console.warn('fpProgressTrack 不在DOM中，跳过进度条绑定');
     }
 }
 
