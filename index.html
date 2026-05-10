@@ -501,24 +501,39 @@
             function switchCourse(courseId) {
                 if (currentCourseId === courseId) return;
                 if (activeAudio) activeAudio.pause();
+
                 document.querySelectorAll('.course-content').forEach(el => el.classList.remove('active'));
                 document.getElementById(`course-${courseId}`).classList.add('active');
+
                 const config = courseConfigs.find(c => c.id === courseId);
                 document.getElementById('current-course-badge').textContent = config.label;
                 document.getElementById('current-course-title').textContent = config.title;
+
                 document.querySelectorAll('.course-tab-btn').forEach(btn => btn.classList.remove('active'));
-               function bindFloatPlayerToAudio(audio, instance) {
-    if (fpBtnPlay && fpBtnPlay.parentNode) {
-        const newFpBtn = fpBtnPlay.cloneNode(true);
-        fpBtnPlay.parentNode.replaceChild(newFpBtn, fpBtnPlay);
-        newFpBtn.addEventListener('click', () => instance.togglePlay());
-    }
-    if (fpProgressTrack && fpProgressTrack.parentNode) {
-        const newFpTrack = fpProgressTrack.cloneNode(true);
-        fpProgressTrack.parentNode.replaceChild(newFpTrack, fpProgressTrack);
-        if (instance.bindFloatProgress) instance.bindFloatProgress(newFpTrack);
-    }
-}
+                document.querySelector(`.course-tab-btn[data-course="${courseId}"]`).classList.add('active');
+
+                if (courses[courseId]) {
+                    activeCourseInstance = courses[courseId];
+                    activeAudio = activeCourseInstance.audio;
+                    bindFloatPlayerToAudio(activeAudio, activeCourseInstance);
+                    if (activeCourseInstance.updateFloatDisplay) activeCourseInstance.updateFloatDisplay();
+                }
+
+                currentCourseId = courseId;
+            }
+
+            function bindFloatPlayerToAudio(audio, instance) {
+                if (fpBtnPlay && fpBtnPlay.parentNode) {
+                    const newFpBtn = fpBtnPlay.cloneNode(true);
+                    fpBtnPlay.parentNode.replaceChild(newFpBtn, fpBtnPlay);
+                    newFpBtn.addEventListener('click', () => instance.togglePlay());
+                }
+                if (fpProgressTrack && fpProgressTrack.parentNode) {
+                    const newFpTrack = fpProgressTrack.cloneNode(true);
+                    fpProgressTrack.parentNode.replaceChild(newFpTrack, fpProgressTrack);
+                    if (instance.bindFloatProgress) instance.bindFloatProgress(newFpTrack);
+                }
+            }
 
             // ----- 对话框课程类 -----
             class DialogCourse {
@@ -763,7 +778,7 @@
                 }
             }
 
-            // ----- 数字课程类 (使用您修改后的 palabraDurations) -----
+            // ----- 数字课程类 -----
             class NumerosCourse {
                 constructor(container, config) {
                     this.container = container;
@@ -777,7 +792,6 @@
                     this.timestamps = [];
                     this.currentActiveIndex = -1;
                     this.dragging = false;
-                    // 🔧 您精确修改的逐词时长数组
                     this.palabraDurations = [
                         1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0,
                         1.0, 1.0, 1.0, 1.5, 1.0, 1.0, 1.0, 1.5, 1.5, 1.5,
